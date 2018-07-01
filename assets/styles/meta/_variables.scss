@@ -1,0 +1,41 @@
+// timings
+$ease-in-out-quart: cubic-bezier(0.86, 0, 0.07, 1);
+$ease-out-quint: cubic-bezier(0.075, 0.82, 0.165, 1);
+$smooth-bezier: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+// colors
+$colors: (
+  black: #000,
+  abyss: #171a1c,
+  woodsmoke: #202325,
+  silver: #adb1b4,
+  athens: #f0f3f6,
+  picton: #419eec,
+  anikiwa: #85c7ff,
+  orange: #fdaf86,
+  flamingo: #ff84cf,
+  white: #ffffff
+);
+
+// breakpoints
+$grid-breakpoints: (
+  initial: 0px,
+  mobile: 600px,
+  tablet: 900px,
+  desktop: 1200px,
+  hd: 1600px
+);
+
+// z-index layers
+$layers: (
+  background,
+  content,
+  dropdown,
+  subnav,
+  mobile-nav,
+  header,
+  overlay,
+  modal,
+  modal-background,
+  modal-content
+);
