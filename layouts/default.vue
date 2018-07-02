@@ -4,15 +4,18 @@
     <main class="main">
       <nuxt/>
     </main>
+    <TheThree />
   </div>
 </template>
 
 <script>
 import TheHeader from "@/components/TheHeader";
+import TheThree from "@/components/TheThree";
 
 export default {
   components: {
-    TheHeader
+    TheHeader,
+    TheThree
   }
 };
 </script>

@@ -4,9 +4,6 @@
   </section>
 </template>
 
-<script>
-</script>
-
 <style lang="scss" scoped>
 .title {
   font-size: 6rem;
