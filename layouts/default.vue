@@ -19,6 +19,7 @@ export default {
 
 <style lang="scss">
 @import "@/assets/styles/reset.scss";
+@import "@/assets/styles/transitions.scss";
 
 html {
   font-size: 62.5%;
@@ -28,13 +29,14 @@ html {
 
 body {
   font-size: 1rem;
-  font-family: Helvetica;
+  font-family: "IBM Plex Sans", "Helvetica", sans-serif;
   overflow-y: scroll;
+  background-color: -color(abyss);
 }
 
 .main {
   @extend %container;
 
-  margin-top: 10rem;
+  margin-top: 20rem;
 }
 </style>

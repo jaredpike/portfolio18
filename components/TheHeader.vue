@@ -1,7 +1,7 @@
 <template>
   <header class="page-header">
     <div class="page-header__inner">
-      <nuxt-link to="/" class="page-header__logo">Jared Pike</nuxt-link>
+      <nuxt-link to="/" class="page-header__logo"><TheLogo/></nuxt-link>
       <nav class="page-header__nav">
         <ul class="page-header__list">
           <nuxt-link to="/work" tag="li" class="page-header__item"><a class="page-header__link">Work</a></nuxt-link>
@@ -11,6 +11,16 @@
     </div>
   </header>
 </template>
+
+<script>
+import TheLogo from "@/components/TheLogo";
+
+export default {
+  components: {
+    TheLogo
+  }
+};
+</script>
 
 <style lang="scss" scoped>
 .page-header {
@@ -40,12 +50,38 @@
     }
 
     &.nuxt-link-active {
-      text-decoration: underline;
+      .page-header__link {
+        &:after {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
+      }
     }
   }
 
   &__link {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    color: -color(white);
+    height: 100%;
+    position: relative;
+    text-transform: uppercase;
+
+    &:hover {
+      color: -color(white);
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 48%;
+      left: -0.5rem;
+      right: -0.5rem;
+      height: 1px;
+      background-color: -color(white);
+      transition: transform 0.6s $ease-in-out-quart 0.4s;
+      transform: scaleX(0);
+      transform-origin: right;
+    }
   }
 
   &__logo {
