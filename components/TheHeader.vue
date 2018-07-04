@@ -71,6 +71,7 @@ export default {
     position: relative;
     text-transform: uppercase;
     transition: color 0.6s $ease-in-out-quart 0.1s;
+    font-family: $primary-font;
 
     .body--light & {
       color: -color(abyss);

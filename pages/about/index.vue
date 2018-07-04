@@ -5,6 +5,10 @@
 </template>
 
 <style lang="scss" scoped>
+.about {
+  @extend %container;
+}
+
 .title {
   @include hd-a(-color(abyss));
 }
