@@ -6,8 +6,6 @@
 
 <style lang="scss" scoped>
 .title {
-  font-size: 6rem;
-  line-height: 1.2;
-  color: -color(white);
+  @include hd-a(-color(abyss));
 }
 </style>

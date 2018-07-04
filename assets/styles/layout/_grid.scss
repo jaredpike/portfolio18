@@ -1,6 +1,26 @@
+@mixin side-padding() {
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
+
+  @include for-tablet-portrait-up {
+    padding-left: 6.4rem;
+    padding-right: 6.4rem;
+  }
+
+  @include for-small-desktop-up {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+}
+
 %container {
-  max-width: 100rem;
+  @include side-padding();
+
   margin: 0 auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
+}
+
+@mixin row($alignment: flex-start, $width: 1fr) {
+  @include side-padding();
+
+  display: flex;
 }

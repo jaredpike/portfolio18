@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app" v-bind:class="{ 'app--light' : isLight }">
     <TheHeader />
     <main class="main">
       <nuxt/>
@@ -13,6 +13,29 @@ import TheHeader from "@/components/TheHeader";
 import TheThree from "@/components/TheThree";
 
 export default {
+  data() {
+    return {
+      isLight: false
+    };
+  },
+  created() {
+    this.routeChanged();
+  },
+  watch: {
+    $route: "routeChanged"
+  },
+  methods: {
+    routeChanged() {
+      if (
+        this.$route.path.startsWith("/work/") ||
+        this.$route.path.startsWith("/about")
+      ) {
+        this.isLight = true;
+      } else {
+        this.isLight = false;
+      }
+    }
+  },
   components: {
     TheHeader,
     TheThree
@@ -33,8 +56,23 @@ html {
 body {
   font-size: 1rem;
   font-family: "IBM Plex Sans", "Helvetica", sans-serif;
-  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+}
+
+.app {
   background-color: -color(abyss);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  transition: background-color 0.6s $ease-in-out-quart;
+
+  &.app--light {
+    background-color: -color(pillow);
+  }
 }
 
 .main {

@@ -1,0 +1,16 @@
+$primary-font: "IBM Plex Sans", "Helvetica Neue", "Helvetica", sans-serif;
+$default-font-color: -color(white);
+
+@mixin hd-a($color: $default-font-color) {
+  font-family: $primary-font;
+  font-size: 6rem;
+  line-height: 1.2;
+  color: $color;
+}
+
+@mixin p-a($color: $default-font-color) {
+  font-family: $primary-font;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  color: $color;
+}
