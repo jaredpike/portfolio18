@@ -1,7 +1,7 @@
 {
   "name": "portfolio18",
   "version": "1.0.0",
-  "description": "My glorious Nuxt.js project",
+  "description": "Portfolio website for Jared Pike",
   "author": "Jared Pike",
   "private": true,
   "scripts": {
@@ -19,6 +19,7 @@
     "nuxt": "^1.0.0",
     "nuxt-sass-resources-loader": "^2.0.2",
     "sass-loader": "^7.0.3",
+    "storyblok-nuxt": "^0.0.5",
     "three": "^0.94.0"
   },
   "devDependencies": {

@@ -1,6 +1,9 @@
 <template>
-  <section class="homepage" v-editable="blok">
-    <h1 class="title">{{ intro }}</h1>
+  <section class="about" v-editable="blok">
+    <h1 class="title">{{ title }}</h1>
+    <div class="content">
+      {{ intro }}
+    </div>
   </section>
 </template>
 
@@ -8,11 +11,12 @@
 export default {
   asyncData(context) {
     return context.app.$storyapi
-      .get("cdn/stories/home", {
+      .get("cdn/stories/about", {
         version: context.isDev ? "draft" : "published"
       })
       .then(res => {
         return {
+          title: res.data.story.content.title,
           intro: res.data.story.content.intro,
           blok: res.data.story.content
         };
@@ -28,11 +32,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.homepage {
+.about {
   @extend %container;
 }
 
+.content {
+  @include p-a(-color(abyss));
+
+  margin-top: 4rem;
+}
+
 .title {
-  @include hd-a();
+  @include hd-a(-color(abyss));
 }
 </style>

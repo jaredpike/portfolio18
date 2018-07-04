@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="href" class="button">{{ text }}</nuxt-link>
+  <a :href="href" class="button" target="_blank">{{ text }}</a>
 </template>
 
 <script>
@@ -19,9 +19,8 @@ export default {
 
 <style lang="scss" scoped>
 .button {
-  @include p-a();
+  @include p-a(-color(abyss));
 
-  color: -color(abyss);
   padding-bottom: 0.4rem;
   display: inline-block;
   border-bottom: 2px solid -color(abyss);

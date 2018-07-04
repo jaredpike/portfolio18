@@ -22,6 +22,14 @@ $default-font-color: -color(white);
   color: $color;
 }
 
+@mixin hd-c($color: $default-font-color) {
+  @extend %base-heading;
+  
+  font-size: 3.6rem;
+  line-height: 1.35;
+  color: $color;
+}
+
 @mixin p-a($color: $default-font-color) {
   font-family: $primary-font;
   font-size: 1.8rem;

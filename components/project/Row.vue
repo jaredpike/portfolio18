@@ -10,12 +10,12 @@
 .row {
   display: flex;
 
-  &--right {
-    justify-content: flex-end;
-  }
+  @include for-small-desktop-up {
+    &--right {
+      justify-content: flex-end;
+    }
 
-  .row__content {
-    @include for-small-desktop-up {
+    .row__content {
       max-width: 70rem;
       width: 60%;
     }

@@ -81,10 +81,6 @@ export default {
       }
     }
 
-    &:hover {
-      color: -color(white);
-    }
-
     &:after {
       content: "";
       position: absolute;
