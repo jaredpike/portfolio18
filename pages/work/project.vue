@@ -13,7 +13,7 @@
       <p class="hero__dek">Village provides substance abuse therapists to talk to and guided exercises/resources to walk through. Because although there are tons of resources for substance abusers, none exist for the friends and family of abusers. Our loved ones often feel extremely lost and helpless when they see us in suffering and don't know how to help. Village seeks to fulfill this need.</p>
     </Row>
         <FullImage src="https://static1.squarespace.com/static/561ac1b7e4b01839b1c0c319/t/5a374d8a9140b764370474f7/1513573846612/village+perspective+mockup.png?format=2000w"/>
-
+    <PullQuote text="We wanted the brand voice to be supportive, understanding, friendly, and trustworthy." />
     <Row>
       <h1 class="hero__title">Village</h1>
       <p class="hero__dek">Village provides substance abuse therapists to talk to and guided exercises/resources to walk through. Because although there are tons of resources for substance abusers, none exist for the friends and family of abusers. Our loved ones often feel extremely lost and helpless when they see us in suffering and don't know how to help. Village seeks to fulfill this need.</p>
@@ -25,12 +25,14 @@
 import FullImage from "@/components/project/FullImage";
 import Button from "@/components/common/Button";
 import Row from "@/components/project/Row";
+import PullQuote from "@/components/project/PullQuote";
 
 export default {
   components: {
     FullImage,
     Button,
-    Row
+    Row,
+    PullQuote
   }
 };
 </script>
