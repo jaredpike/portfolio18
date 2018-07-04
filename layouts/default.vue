@@ -1,5 +1,5 @@
 <template>
-  <div class="app" v-bind:class="{ 'app--light' : isLight }">
+  <div class="app" :class="{ 'app--light' : isLight }">
     <TheHeader />
     <main class="main">
       <nuxt/>

@@ -24,15 +24,16 @@ export default {
 
 <style lang="scss" scoped>
 .page-header {
-  @include side-padding();
-
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding: 6rem 3.2rem;
   pointer-events: none;
+
+  @include for-tablet-portrait-up {
+    padding: 6rem 8rem;
+  }
 
   a {
     pointer-events: initial;

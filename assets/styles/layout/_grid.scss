@@ -18,9 +18,3 @@
 
   margin: 0 auto;
 }
-
-@mixin row($alignment: flex-start, $width: 1fr) {
-  @include side-padding();
-
-  display: flex;
-}
