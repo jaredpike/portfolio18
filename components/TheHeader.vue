@@ -70,9 +70,9 @@ export default {
     height: 100%;
     position: relative;
     text-transform: uppercase;
-    transition: color 0.6s $ease-in-out-quart 0.4s;
+    transition: color 0.6s $ease-in-out-quart 0.1s;
 
-    .app--light & {
+    .body--light & {
       color: -color(abyss);
 
       &:after {
@@ -92,8 +92,8 @@ export default {
       right: -0.5rem;
       height: 1px;
       background-color: -color(white);
-      transition: transform 0.6s $ease-in-out-quart 0.4s,
-        background-color 0.6s $ease-in-out-quart;
+      transition: transform 0.6s $ease-in-out-quart 0.1s,
+        background-color 0.6s $ease-in-out-quart 0.1s;
       transform: scaleX(0);
       transform-origin: right;
     }
