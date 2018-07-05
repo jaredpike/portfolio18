@@ -51,9 +51,17 @@ export default {
 @import "@/assets/styles/transitions.scss";
 
 html {
-  font-size: 62.5%;
+  font-size: 50%;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+
+  @include for-tablet-portrait-up {
+    font-size: 62.5%;
+  }
+
+  @include for-big-desktop-up {
+    font-size: 75%;
+  }
 }
 
 body {
@@ -71,6 +79,10 @@ body {
 }
 
 .main {
-  margin-top: 20rem;
+  margin-top: 14rem;
+
+  @include for-tablet-portrait-up {
+    margin-top: 20rem;
+  }
 }
 </style>

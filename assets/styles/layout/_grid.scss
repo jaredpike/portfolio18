@@ -1,6 +1,6 @@
 @mixin side-padding() {
-  padding-left: 3.2rem;
-  padding-right: 3.2rem;
+  padding-left: 5vw;
+  padding-right: 5vw;
 
   @include for-tablet-portrait-up {
     padding-left: 6.4rem;

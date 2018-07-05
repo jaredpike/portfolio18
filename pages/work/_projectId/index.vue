@@ -65,7 +65,11 @@ export default {
 
 .blocks,
 .blocks li + li {
-  margin-top: 12rem;
+  margin-top: 6rem;
+
+  @include for-tablet-portrait-up {
+    margin-top: 12rem;
+  }
 }
 
 .hero {

@@ -28,7 +28,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  padding: 6rem 3.2rem;
+  padding: 3rem 3.2rem;
   pointer-events: none;
 
   @include for-tablet-portrait-up {
