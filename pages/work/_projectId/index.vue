@@ -57,10 +57,6 @@ export default {
 <style lang="scss" scoped>
 .project {
   @extend %container;
-
-  & > * + * {
-    margin-top: 8rem;
-  }
 }
 
 .blocks,
@@ -87,7 +83,11 @@ export default {
   &__dek {
     @include p-a(-color(abyss));
 
-    margin-top: 4rem;
+    margin-top: 2rem;
+
+    @include for-tablet-portrait-up {
+      margin-top: 4rem;
+    }
   }
 
   .button {
