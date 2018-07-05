@@ -58,7 +58,7 @@ html {
 
 body {
   font-size: 1rem;
-  font-family: "IBM Plex Sans", "Helvetica", sans-serif;
+  font-family: $primary-font;
   width: 100%;
   height: 100%;
   background-color: -color(abyss);

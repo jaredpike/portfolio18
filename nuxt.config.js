@@ -18,8 +18,7 @@ module.exports = {
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
         rel: "stylesheet",
-        href:
-          "https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,700"
+        href: "https://fonts.googleapis.com/css?family=Roboto:400,400i,700"
       }
     ]
   },
