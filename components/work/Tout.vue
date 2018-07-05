@@ -75,7 +75,7 @@ export default {
     top: 0;
     left: 0;
     z-index: -z(background);
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: all 0.4s $ease-in-out-cubic;
   }
 

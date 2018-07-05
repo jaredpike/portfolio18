@@ -4,7 +4,7 @@
       <div class="hero__inner">
         <h1 class="hero__title">{{ title }}</h1>
         <p class="hero__dek">{{ dek }}</p>
-        <Button :href="url" text="View Project" />
+        <Button v-if="url" :href="url" text="View Project" />
       </div>
     </div>
     <ul class="blocks">
