@@ -60,8 +60,12 @@ module.exports = {
       {
         resources: "@/assets/styles/main.scss"
       }
-    ]
+    ],
+    ["@nuxtjs/markdownit", { linkify: true }]
   ],
+  markdownit: {
+    injected: true
+  },
   generate: {
     routes: function() {
       return axios

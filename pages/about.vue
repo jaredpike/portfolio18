@@ -1,13 +1,13 @@
 <template>
   <section class="about" v-editable="blok">
     <h1 class="title">{{ title }}</h1>
-    <div class="content">
-      {{ intro }}
-    </div>
+    <MarkdownContent :content="intro"/>
   </section>
 </template>
 
 <script>
+import MarkdownContent from "@/components/common/MarkdownContent";
+
 export default {
   asyncData(context) {
     return context.app.$storyapi
@@ -27,6 +27,9 @@ export default {
     this.$storyblok.on("change", () => {
       location.reload(true);
     });
+  },
+  components: {
+    MarkdownContent
   }
 };
 </script>
@@ -36,13 +39,9 @@ export default {
   @extend %container;
 }
 
-.content {
-  @include p-a(-color(abyss));
-
-  margin-top: 4rem;
-}
-
 .title {
   @include hd-a(-color(abyss));
+
+  margin-bottom: 4rem;
 }
 </style>
