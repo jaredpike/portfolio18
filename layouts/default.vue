@@ -29,7 +29,8 @@ export default {
       if (process.browser) {
         const body = document.querySelector("body");
         if (
-          this.$route.path.startsWith("/work/") ||
+          (this.$route.path.startsWith("/work/") &&
+            this.$route.path !== "/work/") ||
           this.$route.path.startsWith("/about")
         ) {
           body.classList.add("body--light");

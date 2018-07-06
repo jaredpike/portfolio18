@@ -5,7 +5,7 @@
         <Tout
               :title="project.title"
               :imageUrl="project.imageUrl"
-              :href="'work/' + project.href"
+              :href="'/work/' + project.href"
                />
       </li>
     </ul>
