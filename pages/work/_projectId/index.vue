@@ -1,19 +1,22 @@
 <template>
-  <section class="project" v-editable="blok">
+  <section class="project" v-editable="project.blok">
     <div class="hero">
       <div class="hero__inner">
-        <h1 class="hero__title">{{ title }}</h1>
-        <p class="hero__dek">{{ dek }}</p>
-        <Button v-if="url" :href="url" text="View Project" />
+        <h1 class="hero__title">{{ project.title }}</h1>
+        <p class="hero__dek">{{ project.dek }}</p>
+        <Button v-if="project.url" :href="project.url" :newWindow="true">View Project</Button>
       </div>
     </div>
     <ul class="blocks">
-      <li v-for="block in body" :key="block._uid">
+      <li v-for="block in project.body" :key="block._uid">
         <FullImage v-if="block.component === 'full-image'" :src="block.image" />
         <TextBlock v-if="block.component === 'text-block'" :copy="block.body" :heading="block.heading" :rightAlign="block.right" />
         <PullQuote v-if="block.component === 'pull-quote'" :text="block.text" />
       </li>
     </ul>
+    <div class="next-project">
+      <nuxt-link class="next-project__link" :to="nextProject.slug">Next Project</nuxt-link>
+    </div>
   </section>
 </template>
 
@@ -24,20 +27,44 @@ import PullQuote from "@/components/project/PullQuote";
 import TextBlock from "@/components/project/TextBlock";
 
 export default {
-  asyncData(context) {
-    return context.app.$storyapi
-      .get("cdn/stories/work/" + context.params.projectId, {
+  async asyncData(context) {
+    let { data } = await context.app.$storyapi.get(
+      "cdn/stories/work/" + context.params.projectId,
+      {
         version: context.isDev ? "draft" : "published"
+      }
+    );
+
+    let nextProject = await context.app.$storyapi
+      .get("cdn/stories", {
+        version: context.isDev ? "draft" : "published",
+        starts_with: "work/"
       })
       .then(res => {
-        return {
-          title: res.data.story.content.title,
-          dek: res.data.story.content.dek,
-          url: res.data.story.content.url,
-          body: res.data.story.content.body,
-          blok: res.data.story.content
-        };
+        const matchedRoute = res.data.stories.find(el => {
+          return el.content._uid === data.story.content._uid;
+        });
+        const projectIndex = res.data.stories.indexOf(matchedRoute);
+        const totalProjects = res.data.stories.length - 1;
+        let nextProjectIndex = projectIndex + 1;
+
+        if (nextProjectIndex > totalProjects) {
+          nextProjectIndex = 0;
+        }
+
+        return res.data.stories[nextProjectIndex];
       });
+    return {
+      project: {
+        title: data.story.content.title,
+        dek: data.story.content.dek,
+        url: data.story.content.url,
+        body: data.story.content.body,
+        id: data.story.content._uid,
+        blok: data.story.content
+      },
+      nextProject
+    };
   },
   components: {
     FullImage,
@@ -92,6 +119,19 @@ export default {
 
   .button {
     margin-top: 4rem;
+  }
+}
+
+.next-project {
+  text-align: center;
+  margin-top: 8rem;
+
+  &__link {
+    @include hd-c(-color(abyss));
+
+    padding-bottom: 0.4rem;
+    display: inline-block;
+    border-bottom: 2px solid -color(abyss);
   }
 }
 </style>

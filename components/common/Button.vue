@@ -1,5 +1,5 @@
 <template>
-  <a :href="href" class="button" target="_blank">{{ text }}</a>
+  <a :href="href" class="button" :target="hrefTarget"><slot></slot></a>
 </template>
 
 <script>
@@ -9,9 +9,13 @@ export default {
       type: String,
       required: true
     },
-    text: {
-      type: String,
-      required: true
+    newWindow: {
+      type: Boolean
+    }
+  },
+  computed: {
+    hrefTarget() {
+      return this.newWindow ? "_blank" : "_self";
     }
   }
 };
