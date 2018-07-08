@@ -15,7 +15,7 @@
       </li>
     </ul>
     <div class="next-project">
-      <nuxt-link class="next-project__link" :to="'/' + nextProject.slug">Next Project</nuxt-link>
+      <nuxt-link class="next-project__link" :to="'/work/' + nextProject.slug">Next Project</nuxt-link>
     </div>
   </section>
 </template>
