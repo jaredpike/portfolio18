@@ -71,7 +71,6 @@ body {
   width: 100%;
   height: 100%;
   background-color: -color(abyss);
-  transition: background-color 0.6s $ease-in-out-quart;
   overflow-y: scroll;
 
   &.body--light {
