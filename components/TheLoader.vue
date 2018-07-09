@@ -21,12 +21,12 @@ export default {
       this.delay = setTimeout(() => {
         this.showingText = true;
       }, 1500);
-      this.changeMessage();
     },
     finish() {
       this.loading = false;
       clearTimeout(this.delay);
       this.showingText = false;
+      this.changeMessage();
     },
     changeMessage() {
       const messagesLength = this.messages.length - 1;
