@@ -3,8 +3,15 @@
     <div class="hero">
       <div class="hero__inner">
         <h1 class="hero__title">{{ project.title }}</h1>
-        <p class="hero__dek">{{ project.dek }}</p>
-        <Button v-if="project.url" :href="project.url" :newWindow="true">View Project</Button>
+        <div class="hero__intro">
+          <div class="hero__section">
+            <BaseballCard :client="project.client" :role="project.role" :agency="project.agency" />
+          </div>
+          <div class="hero__section">
+            <p class="hero__dek">{{ project.dek }}</p>
+            <Button v-if="project.url" :href="project.url" :newWindow="true">View Project</Button>
+          </div>
+        </div>
       </div>
     </div>
     <ul class="blocks">
@@ -15,7 +22,7 @@
       </li>
     </ul>
     <div class="next-project">
-      <nuxt-link class="next-project__link" :to="'/work/' + nextProject.slug">Next Project</nuxt-link>
+      <nuxt-link class="next-project__link" :to="'/' + nextProject.full_slug">{{ nextProject.content.title }}</nuxt-link>
     </div>
   </section>
 </template>
@@ -25,6 +32,7 @@ import FullImage from "@/components/project/FullImage";
 import Button from "@/components/common/Button";
 import PullQuote from "@/components/project/PullQuote";
 import TextBlock from "@/components/project/TextBlock";
+import BaseballCard from "@/components/project/BaseballCard";
 
 export default {
   async asyncData(context) {
@@ -61,6 +69,9 @@ export default {
         url: data.story.content.url,
         body: data.story.content.body,
         id: data.story.content._uid,
+        client: data.story.content.client,
+        agency: data.story.content.agency,
+        role: data.story.content.role,
         blok: data.story.content
       },
       nextProject
@@ -70,7 +81,8 @@ export default {
     FullImage,
     Button,
     PullQuote,
-    TextBlock
+    TextBlock,
+    BaseballCard
   },
   mounted() {
     this.$storyblok.init();
@@ -96,13 +108,6 @@ export default {
 }
 
 .hero {
-  &__inner {
-    @include for-small-desktop-up {
-      max-width: 70rem;
-      width: 60%;
-    }
-  }
-
   &__title {
     @include hd-a(-color(abyss));
   }
@@ -110,10 +115,31 @@ export default {
   &__dek {
     @include p-a(-color(abyss));
 
+    @include for-small-desktop-up {
+      max-width: 70rem;
+    }
+  }
+
+  &__intro {
     margin-top: 2rem;
 
-    @include for-tablet-portrait-up {
+    @include for-tablet-landscape-up {
+      display: flex;
       margin-top: 4rem;
+      justify-content: space-between;
+    }
+  }
+
+  &__section {
+    &:first-child {
+      @include for-tablet-landscape-up {
+        order: 2;
+        margin-left: 4rem;
+      }
+
+      @include for-tablet-portrait-down {
+        margin-bottom: 3rem;
+      }
     }
   }
 

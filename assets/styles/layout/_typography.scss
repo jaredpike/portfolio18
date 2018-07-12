@@ -48,3 +48,13 @@ $default-font-color: -color(white);
   line-height: 1.55;
   color: $color;
 }
+
+@mixin eyebrow($color: $default-font-color) {
+  font-family: $primary-font;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: $color;
+  font-weight: -weight(black);
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
