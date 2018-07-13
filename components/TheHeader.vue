@@ -66,6 +66,7 @@ export default {
 
   &__link {
     font-size: 1.8rem;
+    font-weight: -weight(black);
     color: -color(white);
     height: 100%;
     position: relative;

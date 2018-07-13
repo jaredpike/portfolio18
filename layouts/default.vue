@@ -50,6 +50,7 @@ export default {
 <style lang="scss">
 @import "@/assets/styles/reset.scss";
 @import "@/assets/styles/transitions.scss";
+@import "@/assets/styles/fonts.scss";
 
 html {
   font-size: 50%;

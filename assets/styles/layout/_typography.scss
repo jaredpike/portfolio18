@@ -1,14 +1,14 @@
-$primary-font: "Roboto", "Helvetica Neue", "Helvetica", sans-serif;
+$primary-font: "Modern Era", "Helvetica Neue", "Helvetica", sans-serif;
 $default-font-color: -color(white);
 
 %base-heading {
   font-family: $primary-font;
-  font-weight: -weight(regular);
+  font-weight: -weight(black);
 }
 
 @mixin hd-a($color: $default-font-color) {
   @extend %base-heading;
-  
+
   font-size: 5.4rem;
   line-height: 1.2;
   color: $color;
@@ -20,7 +20,7 @@ $default-font-color: -color(white);
 
 @mixin hd-b($color: $default-font-color) {
   @extend %base-heading;
-  
+
   font-size: 3.6rem;
   line-height: 1.35;
   color: $color;
@@ -32,7 +32,7 @@ $default-font-color: -color(white);
 
 @mixin hd-c($color: $default-font-color) {
   @extend %base-heading;
-  
+
   font-size: 3.2rem;
   line-height: 1.35;
   color: $color;

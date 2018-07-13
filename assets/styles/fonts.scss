@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Modern Era';
+  src: url('~/fonts/ModernEra-Black.eot'); /* IE9 Compat Modes */
+  src: url('~/fonts/ModernEra-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('~/fonts/ModernEra-Black.woff') format('woff'), /* Modern Browsers */
+  url('~/fonts/ModernEra-Black.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('~/fonts/ModernEra-Black.svg#ModernEra-Black') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: 800;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: 'Modern Era';
+  src: url('~/fonts/ModernEra-Regular.eot'); /* IE9 Compat Modes */
+  src: url('~/fonts/ModernEra-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('~/fonts/ModernEra-Regular.woff') format('woff'), /* Modern Browsers */
+  url('~/fonts/ModernEra-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('~/fonts/ModernEra-Regular.svg#ModernEra-Regular') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}

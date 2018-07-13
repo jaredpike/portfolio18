@@ -25,6 +25,8 @@ export default {
 .button {
   @include p-a(-color(abyss));
 
+  text-transform: uppercase;
+  font-weight: -weight(black);
   padding-bottom: 0.4rem;
   display: inline-block;
   border-bottom: 2px solid -color(abyss);

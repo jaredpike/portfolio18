@@ -68,6 +68,7 @@ export default {
   &__text {
     @include p-a();
 
+    font-weight: -weight(black);
     text-transform: uppercase;
     animation: flash 0.4s linear infinite;
   }
