@@ -30,6 +30,7 @@ export default {
   left: 0;
   padding: 3rem 3.2rem;
   pointer-events: none;
+  z-index: -z(header);
 
   @include for-tablet-portrait-up {
     padding: 6rem 8rem;
@@ -95,10 +96,6 @@ export default {
       transform: scaleX(0);
       transform-origin: right;
     }
-  }
-
-  &__logo {
-    font-size: 1.6rem;
   }
 }
 </style>

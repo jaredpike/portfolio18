@@ -36,12 +36,6 @@ export default {
   &:hover {
     .tout__image {
       transform: scale(1);
-      opacity: 0.4;
-    }
-
-    .tout__title {
-      opacity: 1;
-      transform: translateY(0);
     }
   }
 
@@ -77,6 +71,7 @@ export default {
     z-index: -z(background);
     transform: scale(1.05);
     transition: all 0.4s $ease-in-out-cubic;
+    opacity: 0.6;
   }
 
   &__title {
@@ -85,8 +80,6 @@ export default {
     position: relative;
     z-index: -z(content);
     transform: translateY(1rem);
-    opacity: 0;
-    transition: all 0.2s $ease-in-out-quart;
   }
 }
 </style>

@@ -8,8 +8,13 @@
 
 <style lang="scss" scoped>
 svg {
-  width: 4.8rem;
-  height: 4.8rem;
+  width: 3.6rem;
+  height: 3.6rem;
   fill: -color(picton);
+
+  @include for-tablet-portrait-up {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
 }
 </style>
