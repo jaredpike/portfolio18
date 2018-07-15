@@ -30,5 +30,14 @@ export default {
   p {
     @include p-a(-color(abyss));
   }
+
+  a {
+    color: -color(abyss);
+    border-bottom: 1px solid -color(abyss);
+  }
+
+  > * + * {
+    margin-top: 4rem;
+  }
 }
 </style>

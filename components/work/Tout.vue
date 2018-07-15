@@ -35,7 +35,7 @@ export default {
 
   &:hover {
     .tout__image {
-      transform: scale(1);
+      transform: scale(1.01);
     }
   }
 

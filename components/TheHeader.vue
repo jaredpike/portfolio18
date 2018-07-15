@@ -72,7 +72,6 @@ export default {
     height: 100%;
     position: relative;
     text-transform: uppercase;
-    transition: color 0.6s $ease-in-out-quart 0.1s;
     font-family: $primary-font;
 
     .body--light & {
@@ -86,13 +85,12 @@ export default {
     &:after {
       content: "";
       position: absolute;
-      top: 48%;
+      top: 40%;
       left: -0.5rem;
       right: -0.5rem;
-      height: 1px;
+      height: 2px;
       background-color: -color(white);
-      transition: transform 0.6s $ease-in-out-quart 0.1s,
-        background-color 0.6s $ease-in-out-quart 0.1s;
+      transition: transform 0.6s $ease-in-out-quart 0.3s;
       transform: scaleX(0);
       transform-origin: right;
     }
