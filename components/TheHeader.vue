@@ -73,6 +73,7 @@ export default {
     position: relative;
     text-transform: uppercase;
     font-family: $primary-font;
+    line-height: 1;
 
     .body--light & {
       color: -color(abyss);
@@ -85,7 +86,7 @@ export default {
     &:after {
       content: "";
       position: absolute;
-      top: 40%;
+      top: 1rem;
       left: -0.5rem;
       right: -0.5rem;
       height: 2px;
