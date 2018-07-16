@@ -6,6 +6,7 @@
               :title="project.title"
               :imageUrl="project.imageUrl"
               :href="'/work/' + project.href"
+              v-reveal
                />
       </li>
     </ul>

@@ -15,11 +15,13 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.0.0",
     "@nuxtjs/markdownit": "^1.2.1",
+    "animejs": "^2.2.0",
     "autoprefixer": "^8.6.4",
     "node-sass": "^4.9.0",
     "nuxt": "^1.0.0",
     "nuxt-sass-resources-loader": "^2.0.2",
     "sass-loader": "^7.0.3",
+    "scrollmonitor": "^1.2.4",
     "storyblok-nuxt": "^0.0.5",
     "three": "^0.94.0"
   },

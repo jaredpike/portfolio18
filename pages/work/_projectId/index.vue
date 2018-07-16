@@ -15,7 +15,7 @@
       </div>
     </div>
     <ul class="blocks">
-      <li v-for="block in project.body" :key="block._uid">
+      <li v-for="block in project.body" :key="block._uid" v-reveal>
         <FullImage v-if="block.component === 'full-image'" :src="block.image" />
         <TextBlock v-if="block.component === 'text-block'" :copy="block.body" :heading="block.heading" :rightAlign="block.right" />
         <PullQuote v-if="block.component === 'pull-quote'" :text="block.text" />

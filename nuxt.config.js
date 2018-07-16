@@ -36,7 +36,7 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [{ src: "~plugins/three", ssr: false }],
+  plugins: [{ src: "~plugins/three", ssr: false }, "plugins/directives/reveal"],
 
   /*
   ** Nuxt.js modules
