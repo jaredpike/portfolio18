@@ -58,7 +58,7 @@ export default {
     &.nuxt-link-exact-active {
       .page-header__link {
         &:after {
-          transform: scaleX(1);
+          transform: scaleX(1) translateY(-50%);
           transform-origin: left;
         }
       }
@@ -86,13 +86,13 @@ export default {
     &:after {
       content: "";
       position: absolute;
-      top: 1rem;
+      top: 50%;
       left: -0.5rem;
       right: -0.5rem;
       height: 2px;
       background-color: -color(white);
       transition: transform 0.6s $ease-in-out-quart 0.3s;
-      transform: scaleX(0);
+      transform: scaleX(0) translateY(-50%);
       transform-origin: right;
     }
   }
