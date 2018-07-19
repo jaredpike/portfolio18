@@ -3,10 +3,10 @@
     <ul class="tout-list">
       <li class="tout-list__item" v-for="project in projects" :key="project.title">
         <Tout
-              :title="project.title"
-              :imageUrl="project.imageUrl"
-              :href="'/work/' + project.href"
-               />
+          :title="project.title"
+          :imageUrl="project.imageUrl"
+          :href="'/work/' + project.href"
+          />
       </li>
     </ul>
   </section>
