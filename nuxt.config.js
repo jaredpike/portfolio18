@@ -74,7 +74,7 @@ module.exports = {
         )
         .then(res => {
           const caseStudies = res.data.stories.map(cs => cs.full_slug);
-          return ["/", "/work", "/about", ...caseStudies];
+          return ["/", "/about", ...caseStudies];
         });
     }
   },
