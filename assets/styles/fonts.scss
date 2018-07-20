@@ -21,3 +21,15 @@
   font-weight: normal;
   text-rendering: optimizeLegibility;
 }
+
+@font-face {
+  font-family: 'Modern Era';
+  src: url('~/fonts/ModernEra-Bold.eot'); /* IE9 Compat Modes */
+  src: url('~/fonts/ModernEra-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('~/fonts/ModernEra-Bold.woff') format('woff'), /* Modern Browsers */
+  url('~/fonts/ModernEra-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('~/fonts/ModernEra-Bold.svg#ModernEra-Bold') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: 700;
+  text-rendering: optimizeLegibility;
+}

@@ -31,6 +31,10 @@ html {
   text-rendering: optimizeLegibility;
 
   @include for-tablet-portrait-up {
+    font-size: 55%;
+  }
+
+  @include for-tablet-landscape-up {
     font-size: 62.5%;
   }
 

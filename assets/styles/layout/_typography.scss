@@ -3,6 +3,7 @@ $default-font-color: -color(abyss);
 
 %base-heading {
   font-family: $primary-font;
+  font-weight: -weight(bold);
 }
 
 @mixin hd-a($color: $default-font-color) {
@@ -11,9 +12,12 @@ $default-font-color: -color(abyss);
   font-size: 4.8rem;
   line-height: 1.2;
   color: $color;
-  font-weight: -weight(regular);
 
   @include for-tablet-portrait-up {
+    font-size: 5.4rem;
+  }
+
+  @include for-tablet-landscape-up {
     font-size: 6.4rem;
   }
 }
@@ -24,7 +28,6 @@ $default-font-color: -color(abyss);
   font-size: 3.6rem;
   line-height: 1.35;
   color: $color;
-  font-weight: -weight(regular);
 
   @include for-tablet-portrait-up {
     font-size: 4.8rem;
@@ -37,7 +40,6 @@ $default-font-color: -color(abyss);
   font-size: 3.2rem;
   line-height: 1.15;
   color: $color;
-  font-weight: -weight(regular);
 
   @include for-tablet-portrait-up {
     font-size: 3.6rem;

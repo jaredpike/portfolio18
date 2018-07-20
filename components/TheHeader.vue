@@ -4,7 +4,7 @@
       <nuxt-link to="/" class="page-header__logo"><TheLogo/></nuxt-link>
       <nav class="page-header__nav">
         <ul class="page-header__list">
-          <nuxt-link to="/work" tag="li" class="page-header__item"><a class="page-header__link">Work</a></nuxt-link>
+          <nuxt-link to="/" tag="li" class="page-header__item"><a class="page-header__link">Work</a></nuxt-link>
           <nuxt-link to="/about" tag="li" class="page-header__item"><a class="page-header__link">About</a></nuxt-link>
         </ul>
       </nav>
