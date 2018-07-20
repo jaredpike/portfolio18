@@ -9,7 +9,7 @@ $default-font-color: -color(abyss);
 @mixin hd-a($color: $default-font-color) {
   @extend %base-heading;
 
-  font-size: 4.8rem;
+  font-size: 3.6rem;
   line-height: 1.2;
   color: $color;
 

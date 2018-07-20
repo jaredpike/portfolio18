@@ -83,8 +83,12 @@ export default {
   &__title {
     @include hd-a();
 
-    margin-bottom: 8rem;
+    margin-bottom: 6rem;
     max-width: 120rem;
+
+    @include for-tablet-portrait-up {
+      margin-bottom: 8rem;
+    }
 
     @include for-tablet-landscape-up {
       margin-bottom: 12rem;
