@@ -8,7 +8,7 @@
           <p class="tout__dek">{{ dek }}</p>
           <p class="tout__action">View Case Study</p>
         </div>
-        <div class="tout__image">
+        <div :class="['tout__image', imagePosition]">
           <img v-if="imageUrl" :src="imageUrl" :alt="title" />
         </div>
       </div>
@@ -26,6 +26,9 @@ export default {
     imageUrl: {
       type: String,
       required: true
+    },
+    imagePosition: {
+      type: String
     },
     href: {
       type: String,
@@ -128,17 +131,22 @@ export default {
       @include for-tablet-portrait-down {
         opacity: 0.1;
       }
-
-      @include for-tablet-landscape-up {
-        object-fit: cover;
-        object-position: left;
-      }
     }
 
     @include for-tablet-portrait-down {
       position: absolute;
       bottom: 0;
       left: 0;
+    }
+
+    @include for-tablet-landscape-up {
+      &.left img {
+        object-position: left;
+      }
+
+      &.right img {
+        object-position: right;
+      }
     }
   }
 

@@ -8,6 +8,7 @@
         <Tout
               :title="project.title"
               :imageUrl="project.imageUrl"
+              :imagePosition="project.imagePosition"
               :href="'/' + project.href"
               :color1="project.color1"
               :color2="project.color2"
@@ -40,6 +41,7 @@ export default {
         starts_with: "work/"
       })
       .then(res => {
+        console.log(res);
         return {
           projects: res.data.stories.map(project => {
             return {
@@ -48,6 +50,7 @@ export default {
               dek: project.content.dek,
               type: project.content.type,
               imageUrl: project.content.image,
+              imagePosition: project.content.image_position,
               color1: project.content.color1,
               color2: project.content.color2
             };
