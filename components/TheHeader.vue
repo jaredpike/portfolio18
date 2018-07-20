@@ -68,7 +68,7 @@ export default {
   &__link {
     font-size: 1.8rem;
     font-weight: -weight(black);
-    color: -color(white);
+    color: -color(abyss);
     height: 100%;
     position: relative;
     text-transform: uppercase;
@@ -90,7 +90,7 @@ export default {
       left: -0.5rem;
       right: -0.5rem;
       height: 2px;
-      background-color: -color(white);
+      background-color: -color(abyss);
       transition: transform 0.6s $ease-in-out-quart 0.3s;
       transform: scaleX(0) translateY(-50%);
       transform-origin: right;

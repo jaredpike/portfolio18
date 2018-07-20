@@ -3,10 +3,14 @@
     <ul class="tout-list">
       <li class="tout-list__item" v-for="project in projects" :key="project.title">
         <Tout
-          :title="project.title"
-          :imageUrl="project.imageUrl"
-          :href="'/work/' + project.href"
-          />
+              :title="project.title"
+              :imageUrl="project.imageUrl"
+              :href="'/' + project.href"
+              :color1="project.color1"
+              :color2="project.color2"
+              :type="project.type"
+              :dek="project.dek"
+        />
       </li>
     </ul>
   </section>
@@ -26,9 +30,13 @@ export default {
         return {
           projects: res.data.stories.map(project => {
             return {
-              href: project.slug,
+              href: project.full_slug,
               title: project.content.title,
-              imageUrl: project.content.image
+              dek: project.content.dek,
+              type: project.content.type,
+              imageUrl: project.content.image,
+              color1: project.content.color1,
+              color2: project.content.color2
             };
           })
         };
@@ -42,6 +50,8 @@ export default {
 
 <style lang="scss" scoped>
 .tout-list {
+  @extend %container;
+
   &__item {
     display: flex;
 
@@ -50,7 +60,11 @@ export default {
     }
 
     & + * {
-      margin-top: 6rem;
+      margin-top: 2.4rem;
+
+      @include for-tablet-landscape-up {
+        margin-top: 4rem;
+      }
     }
   }
 }

@@ -13,33 +13,6 @@ import TheHeader from "@/components/TheHeader";
 import TheFooter from "@/components/TheFooter";
 
 export default {
-  data() {
-    return {
-      isLight: false
-    };
-  },
-  created() {
-    this.routeChanged();
-  },
-  watch: {
-    $route: "routeChanged"
-  },
-  methods: {
-    routeChanged() {
-      if (process.browser) {
-        const body = document.querySelector("body");
-        if (
-          (this.$route.path.startsWith("/work/") &&
-            this.$route.path !== "/work/") ||
-          this.$route.path.startsWith("/about")
-        ) {
-          body.classList.add("body--light");
-        } else {
-          body.classList.remove("body--light");
-        }
-      }
-    }
-  },
   components: {
     TheHeader,
     TheFooter
@@ -71,12 +44,8 @@ body {
   font-family: $primary-font;
   width: 100%;
   height: 100%;
-  background-color: -color(abyss);
+  background-color: -color(pillow);
   overflow-y: scroll;
-
-  &.body--light {
-    background-color: -color(pillow);
-  }
 }
 
 .main {

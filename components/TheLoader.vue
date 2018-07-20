@@ -66,7 +66,7 @@ export default {
   z-index: -z(loader);
 
   &__text {
-    @include p-a();
+    @include p-a(-color(white));
 
     font-weight: -weight(black);
     text-transform: uppercase;
