@@ -26,7 +26,7 @@ $default-font-color: -color(abyss);
   @extend %base-heading;
 
   font-size: 3.6rem;
-  line-height: 1.35;
+  line-height: 1.1;
   color: $color;
 
   @include for-tablet-portrait-up {
@@ -53,6 +53,17 @@ $default-font-color: -color(abyss);
   color: $color;
 }
 
+@mixin p-b($color: $default-font-color) {
+  font-family: $primary-font;
+  font-size: 2rem;
+  line-height: 1.55;
+  color: $color;
+
+  @include for-tablet-portrait-up {
+    font-size: 2.4rem;
+  }
+}
+
 @mixin eyebrow($color: $default-font-color) {
   font-family: $primary-font;
   font-size: 1.2rem;
@@ -61,5 +72,5 @@ $default-font-color: -color(abyss);
   color: $color;
   font-weight: -weight(black);
   text-transform: uppercase;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.6rem;
 }

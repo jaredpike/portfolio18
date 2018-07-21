@@ -98,9 +98,12 @@ export default {
     }
 
     @include for-tablet-landscape-up {
-      width: 60rem;
-      padding-left: 10%;
-      margin-right: 10%;
+      width: 25rem;
+      margin-left: 6%;
+    }
+
+    @include for-small-desktop-up {
+      margin-left: 10%;
     }
   }
 
@@ -111,7 +114,7 @@ export default {
   }
 
   &__title {
-    @include hd-c(-color(white));
+    @include hd-b(-color(white));
 
     margin-top: 0.2rem;
   }
@@ -126,6 +129,9 @@ export default {
   &__image {
     width: 100%;
     height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
 
     img {
       width: 100%;
@@ -144,6 +150,8 @@ export default {
     }
 
     @include for-tablet-landscape-up {
+      width: 60%;
+
       &.left img {
         object-position: left;
       }

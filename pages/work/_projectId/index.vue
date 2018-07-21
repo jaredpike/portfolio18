@@ -8,7 +8,7 @@
             <BaseballCard :client="project.client" :role="project.role" :agency="project.agency" />
           </div>
           <div class="hero__section">
-            <p class="hero__dek">{{ project.dek }}</p>
+            <p class="hero__dek">{{ project.intro }}</p>
             <Button v-if="project.url" :href="project.url" :newWindow="true">View Project</Button>
           </div>
         </div>
@@ -22,7 +22,7 @@
       </li>
     </ul>
     <div class="next-project">
-        <Tout 
+        <Tout
           :title="nextProject.content.title"
           :imageUrl="nextProject.content.image"
           :imagePosition="nextProject.content.image_position"
@@ -75,7 +75,7 @@ export default {
     return {
       project: {
         title: data.story.content.title,
-        dek: data.story.content.dek,
+        intro: data.story.content.intro,
         url: data.story.content.url,
         body: data.story.content.body,
         id: data.story.content._uid,
@@ -120,11 +120,11 @@ export default {
 
 .hero {
   &__title {
-    @include hd-a(-color(abyss));
+    @include hd-a();
   }
 
   &__dek {
-    @include p-a(-color(abyss));
+    @include p-b();
 
     @include for-small-desktop-up {
       max-width: 70rem;
