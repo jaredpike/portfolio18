@@ -19,6 +19,7 @@
         <FullImage v-if="block.component === 'full-image'" :src="block.image" />
         <TextBlock v-if="block.component === 'text-block'" :copy="block.body" :heading="block.heading" :rightAlign="block.right" />
         <PullQuote v-if="block.component === 'pull-quote'" :text="block.text" />
+        <Mockup v-if="block.component === 'mockup'" :images="block.images" :color="block.color" />
       </li>
     </ul>
     <div class="next-project">
@@ -42,6 +43,7 @@ import Button from "@/components/common/Button";
 import PullQuote from "@/components/project/PullQuote";
 import TextBlock from "@/components/project/TextBlock";
 import BaseballCard from "@/components/project/BaseballCard";
+import Mockup from "@/components/project/Mockup";
 import Tout from "@/components/work/Tout";
 
 export default {
@@ -93,7 +95,8 @@ export default {
     PullQuote,
     TextBlock,
     BaseballCard,
-    Tout
+    Tout,
+    Mockup
   },
   mounted() {
     this.$storyblok.init();

@@ -1,19 +1,66 @@
 <template>
-  <div class="mockup">
+  <div class="mockup" :style="{ backgroundColor: color }">
     <div class="mockup__inner">
       <ul class="mockup__list">
-        <li class="mockup__item"><img class="mockup__image" src="https://i.imgur.com/UyWIjLC.png" /></li>
-        <li class="mockup__item"><img class="mockup__image" src="https://i.imgur.com/UyWIjLC.png" /></li>
-        <li class="mockup__item"><img class="mockup__image" src="https://i.imgur.com/UyWIjLC.png" /></li>
-      </ul>   
+        <li class="mockup__item" v-for="image in images" :key="image.filename" style="opacity: 0">
+          <img class="mockup__image" :src="image.filename" />
+        </li>
+      </ul>
     </div>
+    <div class="mockup__trigger"></div>
   </div>
 </template>
+
+<script>
+import anime from "animejs";
+import scrollMonitor from "scrollmonitor";
+
+export default {
+  props: {
+    images: {
+      type: Array,
+      required: true
+    },
+    color: {
+      type: String,
+      required: true
+    }
+  },
+  mounted() {
+    this.targets = this.$el.querySelectorAll(".mockup__item");
+    this.watch();
+  },
+  methods: {
+    watch() {
+      const watchTargets = this.$el.querySelectorAll(".mockup__trigger");
+      const watcher = scrollMonitor.create(watchTargets);
+      watcher.enterViewport(() => {
+        watcher.destroy();
+        this.animateIn();
+      });
+    },
+    animateIn() {
+      anime({
+        targets: this.targets,
+        duration: 2000,
+        translateY: ["100vh", 0],
+        delay: function(el, i) {
+          return i * 200
+        },
+        elasticity: 350,
+        opacity: 1,
+        rotateX: ["-25deg", "25deg"],
+        rotateY: ["-90deg", "10deg"],
+        rotateZ: ["-60deg", "-20deg"]
+      });
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .mockup {
   margin-top: 4rem;
-  background: -color(picton);
   padding-top: 65%;
   height: 0;
   position: relative;
@@ -35,20 +82,20 @@
     align-items: center;
   }
 
-  &__item {
-    // transform: translateY(50%);
-    transition: transform 0.5s $ease-in-out-quart;
-
-    &:hover {
-      transform: translateY(-5rem);
-    }
+  &__image {
+    box-shadow: -10px 20px 35px 0px rgba(0, 0, 0, 0.2),
+                -20px 30px 55px 20px rgba(0, 0, 0, 0.15),
+                -2px 2px 10px 0px rgba(0, 0, 0, 0.1);
   }
 
-  &__image {
-    transform: rotateX(25deg) rotateY(10deg) rotateZ(-20deg);
-    transition: transform 2s $ease-in-out-quart;
-    box-shadow: -10px 20px 35px 0px rgba(0, 0, 0, 0.2),
-      -2px 2px 10px 0px rgba(0, 0, 0, 0.1);
+  &__trigger {
+    position: absolute;
+    top: 75%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    z-index: -z(overlay);
+    transform: translateX(-50%);
   }
 }
 </style>
