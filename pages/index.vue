@@ -41,7 +41,6 @@ export default {
         starts_with: "work/"
       })
       .then(res => {
-        console.log(res);
         return {
           projects: res.data.stories.map(project => {
             return {
@@ -104,10 +103,6 @@ export default {
 
   &__item {
     display: flex;
-
-    &:nth-child(even) {
-      justify-content: flex-end;
-    }
 
     & + * {
       margin-top: 2.4rem;

@@ -6,7 +6,7 @@
           <p class="tout__type">{{ type }}</p>
           <h1 class="tout__title">{{ title }}</h1>
           <p class="tout__dek">{{ dek }}</p>
-          <p class="tout__action">View Case Study</p>
+          <p class="tout__action" v-if="!hideButton">View Case Study</p>
         </div>
         <div :class="['tout__image', imagePosition]">
           <img v-if="imageUrl" :src="imageUrl" :alt="title" />
@@ -46,6 +46,9 @@ export default {
     },
     color2: {
       type: String
+    },
+    hideButton: {
+      type: Boolean
     }
   }
 };
@@ -57,6 +60,7 @@ export default {
   border-radius: 1.2rem;
   overflow: hidden;
   background: -color(abyss);
+  display: block;
 
   &__ratio {
     position: relative;

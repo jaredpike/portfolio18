@@ -22,7 +22,16 @@
       </li>
     </ul>
     <div class="next-project">
-      <nuxt-link class="next-project__link" :to="'/' + nextProject.full_slug">{{ nextProject.content.title }}</nuxt-link>
+        <Tout 
+          :title="nextProject.content.title"
+          :imageUrl="nextProject.content.image"
+          :imagePosition="nextProject.content.image_position"
+          :href="'/' + nextProject.full_slug"
+          :color1="nextProject.content.color1"
+          :color2="nextProject.content.color2"
+          :type="'Up Next'"
+          :hideButton="true"
+        />
     </div>
   </section>
 </template>
@@ -33,6 +42,7 @@ import Button from "@/components/common/Button";
 import PullQuote from "@/components/project/PullQuote";
 import TextBlock from "@/components/project/TextBlock";
 import BaseballCard from "@/components/project/BaseballCard";
+import Tout from "@/components/work/Tout";
 
 export default {
   async asyncData(context) {
@@ -82,7 +92,8 @@ export default {
     Button,
     PullQuote,
     TextBlock,
-    BaseballCard
+    BaseballCard,
+    Tout
   },
   mounted() {
     this.$storyblok.init();
@@ -149,15 +160,6 @@ export default {
 }
 
 .next-project {
-  text-align: center;
   margin-top: 8rem;
-
-  &__link {
-    @include hd-c(-color(abyss));
-
-    padding-bottom: 0.4rem;
-    display: inline-block;
-    border-bottom: 2px solid -color(abyss);
-  }
 }
 </style>
