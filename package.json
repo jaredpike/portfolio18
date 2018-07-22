@@ -22,7 +22,7 @@
     "nuxt-sass-resources-loader": "^2.0.2",
     "sass-loader": "^7.0.3",
     "scrollmonitor": "^1.2.4",
-    "storyblok-nuxt": "^0.0.5",
+    "storyblok-nuxt": "^0.0.6",
     "three": "^0.94.0"
   },
   "devDependencies": {

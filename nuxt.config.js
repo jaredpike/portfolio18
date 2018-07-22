@@ -51,7 +51,8 @@ module.exports = {
           process.env.NODE_ENV == "production"
             ? "kr2RQ5qwoCNn5nQ1L7oaDAtt"
             : "Ngt7vpTcG6oeQSfII63q9gtt",
-        cacheProvider: "memory"
+        cacheProvider: "memory",
+        timeout: 10000
       }
     ],
     [
