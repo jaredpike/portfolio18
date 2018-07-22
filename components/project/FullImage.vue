@@ -21,6 +21,7 @@ export default {
 <style lang="scss" scoped>
 .image--full {
   img {
+    border-radius: $border-radius;
     width: 100%;
     max-width: 100%;
   }

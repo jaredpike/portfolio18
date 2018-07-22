@@ -9,7 +9,7 @@
           </div>
           <div class="hero__section">
             <p class="hero__dek">{{ project.intro }}</p>
-            <Button v-if="project.url" :href="project.url" :newWindow="true">View Project</Button>
+            <Button v-if="project.url" :href="project.url" :newWindow="true">Launch Site</Button>
           </div>
         </div>
       </div>
@@ -19,7 +19,8 @@
         <FullImage v-if="block.component === 'full-image'" :src="block.image" />
         <TextBlock v-if="block.component === 'text-block'" :copy="block.body" :heading="block.heading" :rightAlign="block.right" />
         <PullQuote v-if="block.component === 'pull-quote'" :text="block.text" />
-        <Mockup v-if="block.component === 'mockup'" :images="block.images" :color="block.color" />
+        <Mockup v-if="block.component === 'mockup'" :images="block.images" :color="block.color.color" />
+        <ImageGrid v-if="block.component === 'image-grid'" :images="block.images" :color="block.color.color" :hideShadows="block.hide_shadows" />
       </li>
     </ul>
     <div class="next-project">
@@ -44,6 +45,7 @@ import PullQuote from "@/components/project/PullQuote";
 import TextBlock from "@/components/project/TextBlock";
 import BaseballCard from "@/components/project/BaseballCard";
 import Mockup from "@/components/project/Mockup";
+import ImageGrid from "@/components/project/ImageGrid";
 import Tout from "@/components/work/Tout";
 
 export default {
@@ -96,7 +98,8 @@ export default {
     TextBlock,
     BaseballCard,
     Tout,
-    Mockup
+    Mockup,
+    ImageGrid
   },
   mounted() {
     this.$storyblok.init();

@@ -65,6 +65,7 @@ export default {
   height: 0;
   position: relative;
   overflow: hidden;
+  border-radius: $border-radius;
 
   &__inner {
     padding-left: 10vw;

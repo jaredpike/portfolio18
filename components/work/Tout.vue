@@ -57,7 +57,7 @@ export default {
 <style lang="scss" scoped>
 .tout {
   width: 100%;
-  border-radius: 1.2rem;
+  border-radius: $border-radius;
   overflow: hidden;
   background: -color(abyss);
   display: block;
