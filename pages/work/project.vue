@@ -8,7 +8,6 @@
         <Button href="#" text="View Project" />
       </div>
     </div>
-    <Mockup />
     <Row class="row--right">
       <h1 class="hero__title">Village</h1>
       <p class="hero__dek">Village provides substance abuse therapists to talk to and guided exercises/resources to walk through. Because although there are tons of resources for substance abusers, none exist for the friends and family of abusers. Our loved ones often feel extremely lost and helpless when they see us in suffering and don't know how to help. Village seeks to fulfill this need.</p>
@@ -19,7 +18,7 @@
       <h1 class="hero__title">Village</h1>
       <p class="hero__dek">Village provides substance abuse therapists to talk to and guided exercises/resources to walk through. Because although there are tons of resources for substance abusers, none exist for the friends and family of abusers. Our loved ones often feel extremely lost and helpless when they see us in suffering and don't know how to help. Village seeks to fulfill this need.</p>
     </Row>
-    
+
   </section>
   </div>
 </template>
@@ -30,7 +29,6 @@ import Button from "@/components/common/Button";
 import MarkdownContent from "@/components/common/MarkdownContent";
 import Row from "@/components/project/Row";
 import PullQuote from "@/components/project/PullQuote";
-import Mockup from "@/components/project/Mockup";
 
 export default {
   components: {
@@ -38,8 +36,7 @@ export default {
     Button,
     Row,
     PullQuote,
-    MarkdownContent,
-    Mockup
+    MarkdownContent
   }
 };
 </script>
