@@ -17,7 +17,7 @@ export default {
       type: String
     },
     blok: {
-      type: String
+      type: Object
     }
   },
   mounted() {

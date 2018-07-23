@@ -22,7 +22,7 @@ export default {
       type: Boolean
     },
     blok: {
-      type: String
+      type: Object
     }
   },
   components: {
