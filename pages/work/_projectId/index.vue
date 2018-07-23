@@ -57,8 +57,6 @@ export default {
       }
     );
 
-    console.log(data);
-
     let nextProject = await context.app.$storyapi
       .get("cdn/stories", {
         version: context.isDev ? "draft" : "published",
