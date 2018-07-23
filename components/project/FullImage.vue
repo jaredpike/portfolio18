@@ -1,10 +1,12 @@
 <template>
-  <figure class="image--full">
+  <figure class="image--full" v-editable="blok">
     <img :src="src" :alt="alt">
   </figure>
 </template>
 
 <script>
+import { isEditMode } from "@/plugins/helper";
+
 export default {
   props: {
     src: {
@@ -13,7 +15,13 @@ export default {
     },
     alt: {
       type: String
+    },
+    blok: {
+      type: String
     }
+  },
+  mounted() {
+    isEditMode(this);
   }
 };
 </script>

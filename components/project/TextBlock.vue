@@ -1,5 +1,5 @@
 <template>
-  <Row :class="{ 'row--right' : rightAlign }">
+  <Row :class="{ 'row--right' : rightAlign }" v-editable="blok">
     <h2 v-if="heading" class="text-block__heading">{{ heading }}</h2>
     <p class="text-block__copy">{{ copy }}</p>
   </Row>
@@ -7,6 +7,7 @@
 
 <script>
 import Row from "@/components/project/Row";
+import { isEditMode } from "@/plugins/helper";
 
 export default {
   props: {
@@ -19,10 +20,16 @@ export default {
     },
     rightAlign: {
       type: Boolean
+    },
+    blok: {
+      type: String
     }
   },
   components: {
     Row
+  },
+  mounted() {
+    isEditMode(this);
   }
 };
 </script>

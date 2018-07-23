@@ -1,5 +1,5 @@
 <template>
-  <div class="mockup" :style="{ backgroundColor: color }">
+  <div class="mockup" :style="{ backgroundColor: color }" v-editable="blok">
     <div class="mockup__inner">
       <ul class="mockup__list">
         <li class="mockup__item" v-for="image in images" :key="image.filename" style="opacity: 0">
@@ -14,6 +14,7 @@
 <script>
 import anime from "animejs";
 import scrollMonitor from "scrollmonitor";
+import { isEditMode } from "@/plugins/helper";
 
 export default {
   props: {
@@ -24,11 +25,15 @@ export default {
     color: {
       type: String,
       required: true
+    },
+    blok: {
+      type: String
     }
   },
   mounted() {
     this.targets = this.$el.querySelectorAll(".mockup__item");
     this.watch();
+    isEditMode(this);
   },
   methods: {
     watch() {
@@ -45,7 +50,7 @@ export default {
         duration: 2000,
         translateY: ["100vh", 0],
         delay: function(el, i) {
-          return i * 200
+          return i * 200;
         },
         elasticity: 350,
         opacity: 1,
@@ -55,7 +60,7 @@ export default {
       });
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -85,8 +90,8 @@ export default {
 
   &__image {
     box-shadow: -10px 20px 35px 0px rgba(0, 0, 0, 0.2),
-                -20px 30px 55px 20px rgba(0, 0, 0, 0.15),
-                -2px 2px 10px 0px rgba(0, 0, 0, 0.1);
+      -20px 30px 55px 20px rgba(0, 0, 0, 0.15),
+      -2px 2px 10px 0px rgba(0, 0, 0, 0.1);
   }
 
   &__trigger {

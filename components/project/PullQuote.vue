@@ -1,16 +1,24 @@
 <template>
-  <aside class="pullquote">
+  <aside class="pullquote" v-editable="blok">
     <blockquote class="pullquote__quote">{{ text }}</blockquote>
   </aside>
 </template>
 
 <script>
+import { isEditMode } from "@/plugins/helper";
+
 export default {
   props: {
     text: {
       type: String,
       required: true
+    },
+    blok: {
+      type: String
     }
+  },
+  mounted() {
+    isEditMode(this);
   }
 };
 </script>
