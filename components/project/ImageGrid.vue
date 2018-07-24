@@ -1,5 +1,5 @@
 <template>
-  <div class="image-grid" :style="{ backgroundColor: color }" v-editable="blok">
+  <div :class="['image-grid', removePadding ? 'no-padding' : '']" :style="{ backgroundColor: color }" v-editable="blok">
     <div class="image-grid__inner">
       <ul class="image-grid__list">
         <li class="image-grid__item" v-for="image in images" :key="image.filename" style="opacity: 0">
@@ -26,6 +26,9 @@ export default {
       required: true
     },
     hideShadows: {
+      type: Boolean
+    },
+    removePadding: {
       type: Boolean
     },
     blok: {
@@ -68,6 +71,14 @@ export default {
   position: relative;
   overflow: hidden;
   border-radius: $border-radius;
+
+  &.no-padding {
+    overflow: visible;
+
+    .image-grid__inner {
+      padding: 0;
+    }
+  }
 
   &__inner {
     padding: 3rem;

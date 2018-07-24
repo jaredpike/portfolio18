@@ -20,7 +20,7 @@
         <TextBlock v-if="block.component === 'text-block'" :copy="block.body" :heading="block.heading" :rightAlign="block.right" :blok="block"/>
         <PullQuote v-if="block.component === 'pull-quote'" :text="block.text" :blok="block" />
         <Mockup v-if="block.component === 'mockup'" :images="block.images" :color="block.color.color" :blok="block" />
-        <ImageGrid v-if="block.component === 'image-grid'" :images="block.images" :color="block.color.color" :hideShadows="block.hide_shadows" :blok="block" />
+        <ImageGrid v-if="block.component === 'image-grid'" :images="block.images" :color="block.color.color" :hideShadows="block.hide_shadows" :removePadding="block.remove_padding" :blok="block" />
       </li>
     </ul>
     <div class="next-project">
