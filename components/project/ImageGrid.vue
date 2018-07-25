@@ -126,9 +126,8 @@ export default {
 
   &__image {
     &.has-shadow {
-      box-shadow: -10px 20px 35px 0px rgba(0, 0, 0, 0.10),
-        -20px 30px 35px 20px rgba(0, 0, 0, 0.05),
-        -2px 2px 10px 0px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 7px 15px 0 rgba(0, 0, 0, 0.05),
+        0px 2px 5px 0px rgba(0, 0, 0, 0.05);
     }
   }
 }
