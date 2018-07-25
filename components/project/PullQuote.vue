@@ -26,5 +26,11 @@ export default {
 <style lang="scss" scoped>
 .pullquote {
   @include hd-b(-color(abyss));
+
+  line-height: 1.3;
+
+  @include for-small-desktop-up {
+    max-width: 80%;
+  }
 }
 </style>
