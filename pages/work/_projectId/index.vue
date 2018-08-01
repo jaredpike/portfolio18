@@ -19,8 +19,8 @@
         <FullImage v-if="block.component === 'full-image'" :src="block.image" :caption="block.caption" :blok="block" />
         <TextBlock v-if="block.component === 'text-block'" :copy="block.body" :heading="block.heading" :rightAlign="block.right" :blok="block"/>
         <PullQuote v-if="block.component === 'pull-quote'" :text="block.text" :blok="block" />
-        <Mockup v-if="block.component === 'mockup'" :images="block.images" :color="block.color.color" :blok="block" />
-        <ImageGrid v-if="block.component === 'image-grid'" :images="block.images" :color="block.color.color" :hideShadows="block.hide_shadows" :removePadding="block.remove_padding" :blok="block" />
+        <Mockup v-if="block.component === 'mockup'" :images="block.images" :color="block.color.color" :blok="block" :caption="block.caption" />
+        <ImageGrid v-if="block.component === 'image-grid'" :images="block.images" :color="block.color.color" :hideShadows="block.hide_shadows" :removePadding="block.remove_padding" :caption="block.caption" :blok="block" />
       </li>
     </ul>
     <div class="next-project">

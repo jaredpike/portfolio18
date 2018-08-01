@@ -1,13 +1,16 @@
-<template>
-  <div class="mockup" :style="{ backgroundColor: color }" v-editable="blok">
-    <div class="mockup__inner">
-      <ul class="mockup__list">
-        <li class="mockup__item" v-for="image in images" :key="image.filename" style="opacity: 0">
-          <img class="mockup__image" :src="image.filename" />
-        </li>
-      </ul>
+<template> 
+  <div v-editable="blok">
+    <div class="mockup" :style="{ backgroundColor: color }">
+      <div class="mockup__inner">
+        <ul class="mockup__list">
+          <li class="mockup__item" v-for="image in images" :key="image.filename" style="opacity: 0">
+            <img class="mockup__image" :src="image.filename" />
+          </li>
+        </ul>
+      </div>
+      <div class="mockup__trigger"></div>
     </div>
-    <div class="mockup__trigger"></div>
+    <Caption v-if="caption" :text="caption"/>
   </div>
 </template>
 
@@ -15,6 +18,7 @@
 import anime from "animejs";
 import scrollMonitor from "scrollmonitor";
 import storyblokLivePreview from "@/mixins/storyblokLivePreview";
+import Caption from "@/components/project/Caption";
 
 export default {
   props: {
@@ -28,6 +32,9 @@ export default {
     },
     blok: {
       type: Object
+    },
+    caption: {
+      type: String
     }
   },
   mounted() {
@@ -58,6 +65,9 @@ export default {
         rotateZ: ["-60deg", "-20deg"]
       });
     }
+  },
+  components: {
+    Caption
   },
   mixins: [storyblokLivePreview]
 };

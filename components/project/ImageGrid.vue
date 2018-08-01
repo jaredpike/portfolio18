@@ -1,12 +1,15 @@
 <template>
-  <div :class="['image-grid', removePadding ? 'no-padding' : '']" :style="{ backgroundColor: color }" v-editable="blok">
-    <div class="image-grid__inner">
-      <ul class="image-grid__list">
-        <li class="image-grid__item" v-for="image in images" :key="image.filename" style="opacity: 0">
-          <img :class="['image-grid__image', hideShadows ? '' : 'has-shadow']" :src="image.filename" />
-        </li>
-      </ul>
+  <div v-editable="blok">
+    <div :class="['image-grid', removePadding ? 'no-padding' : '']" :style="{ backgroundColor: color }">
+      <div class="image-grid__inner">
+        <ul class="image-grid__list">
+          <li class="image-grid__item" v-for="image in images" :key="image.filename" style="opacity: 0">
+            <img :class="['image-grid__image', hideShadows ? '' : 'has-shadow']" :src="image.filename" />
+          </li>
+        </ul>
+      </div>
     </div>
+    <Caption v-if="caption" :text="caption" />
   </div>
 </template>
 
@@ -14,6 +17,7 @@
 import anime from "animejs";
 import scrollMonitor from "scrollmonitor";
 import storyblokLivePreview from "@/mixins/storyblokLivePreview";
+import Caption from "@/components/project/Caption";
 
 export default {
   props: {
@@ -33,6 +37,9 @@ export default {
     },
     blok: {
       type: Object
+    },
+    caption: {
+      type: String
     }
   },
   mounted() {
@@ -60,6 +67,9 @@ export default {
         opacity: 1
       });
     }
+  },
+  components: {
+    Caption
   },
   mixins: [storyblokLivePreview]
 };

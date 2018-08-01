@@ -1,12 +1,13 @@
 <template>
   <figure class="full-image" v-editable="blok">
     <img :src="src" :alt="alt">
-    <figcaption class="full-image__caption" v-if="caption">{{ caption }}</figcaption>
+    <Caption v-if="caption" :text="caption" />
   </figure>
 </template>
 
 <script>
 import storyblokLivePreview from "@/mixins/storyblokLivePreview";
+import Caption from "@/components/project/Caption";
 
 export default {
   props: {
@@ -24,6 +25,9 @@ export default {
       type: Object
     }
   },
+  components: {
+    Caption
+  },
   mixins: [storyblokLivePreview]
 };
 </script>
@@ -34,12 +38,6 @@ export default {
     border-radius: $border-radius;
     width: 100%;
     max-width: 100%;
-  }
-
-  &__caption {
-    @include p-a();
-
-    margin-top: 1.6rem;
   }
 }
 </style>
