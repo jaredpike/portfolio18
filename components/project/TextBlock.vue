@@ -7,7 +7,7 @@
 
 <script>
 import Row from "@/components/project/Row";
-import { isEditMode } from "@/plugins/helper";
+import storyblokLivePreview from "@/mixins/storyblokLivePreview";
 
 export default {
   props: {
@@ -28,9 +28,7 @@ export default {
   components: {
     Row
   },
-  mounted() {
-    isEditMode(this);
-  }
+  mixins: [storyblokLivePreview]
 };
 </script>
 

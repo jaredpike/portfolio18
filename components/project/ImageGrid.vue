@@ -13,7 +13,7 @@
 <script>
 import anime from "animejs";
 import scrollMonitor from "scrollmonitor";
-import { isEditMode } from "@/plugins/helper";
+import storyblokLivePreview from "@/mixins/storyblokLivePreview";
 
 export default {
   props: {
@@ -38,7 +38,6 @@ export default {
   mounted() {
     this.targets = this.$el.querySelectorAll(".image-grid__item");
     this.watch();
-    isEditMode(this);
   },
   methods: {
     watch() {
@@ -61,7 +60,8 @@ export default {
         opacity: 1
       });
     }
-  }
+  },
+  mixins: [storyblokLivePreview]
 };
 </script>
 

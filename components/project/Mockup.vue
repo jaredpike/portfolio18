@@ -14,7 +14,7 @@
 <script>
 import anime from "animejs";
 import scrollMonitor from "scrollmonitor";
-import { isEditMode } from "@/plugins/helper";
+import storyblokLivePreview from "@/mixins/storyblokLivePreview";
 
 export default {
   props: {
@@ -33,7 +33,6 @@ export default {
   mounted() {
     this.targets = this.$el.querySelectorAll(".mockup__item");
     this.watch();
-    isEditMode(this);
   },
   methods: {
     watch() {
@@ -59,7 +58,8 @@ export default {
         rotateZ: ["-60deg", "-20deg"]
       });
     }
-  }
+  },
+  mixins: [storyblokLivePreview]
 };
 </script>
 

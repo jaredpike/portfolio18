@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { isEditMode } from "@/plugins/helper";
+import storyblokLivePreview from "@/mixins/storyblokLivePreview";
 
 export default {
   props: {
@@ -24,9 +24,7 @@ export default {
       type: Object
     }
   },
-  mounted() {
-    isEditMode(this);
-  }
+  mixins: [storyblokLivePreview]
 };
 </script>
 
