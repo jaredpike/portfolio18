@@ -163,15 +163,7 @@ export default {
   }
 
   &__action {
-    font-family: $primary-font;
-    font-size: 1.6rem;
-    color: -color(white);
-    text-transform: uppercase;
-    font-weight: -weight(black);
-    padding-bottom: 0.4rem;
-    display: inline-block;
-    border-bottom: 2px solid -color(white);
-    margin-top: 3rem;
+    @extend %action;
   }
 }
 </style>

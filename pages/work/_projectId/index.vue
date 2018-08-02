@@ -21,6 +21,7 @@
         <PullQuote v-if="block.component === 'pull-quote'" :text="block.text" :blok="block" />
         <Mockup v-if="block.component === 'mockup'" :images="block.images" :color="block.color.color" :blok="block" :caption="block.caption" />
         <ImageGrid v-if="block.component === 'image-grid'" :images="block.images" :color="block.color.color" :hideShadows="block.hide_shadows" :removePadding="block.remove_padding" :caption="block.caption" :blok="block" />
+        <ArticleTout v-if="block.component ==='article-tout'" :title="block.title" :dek="block.dek" :url="block.url" :image="block.image" :authorName="block.author_name" :authorPhoto="block.author_photo" :buttonText="block.button_text" :date="block.date" :blok="block" />
       </li>
     </ul>
     <div class="next-project">
@@ -39,6 +40,7 @@
 </template>
 
 <script>
+import StoryblokLivePreview from "@/mixins/storyblokLivePreview";
 import FullImage from "@/components/project/FullImage";
 import Button from "@/components/common/Button";
 import PullQuote from "@/components/project/PullQuote";
@@ -47,6 +49,7 @@ import BaseballCard from "@/components/project/BaseballCard";
 import Mockup from "@/components/project/Mockup";
 import ImageGrid from "@/components/project/ImageGrid";
 import Tout from "@/components/work/Tout";
+import ArticleTout from "@/components/project/ArticleTout";
 
 export default {
   async asyncData(context) {
@@ -99,14 +102,10 @@ export default {
     BaseballCard,
     Tout,
     Mockup,
-    ImageGrid
+    ImageGrid,
+    ArticleTout
   },
-  mounted() {
-    this.$storyblok.init();
-    this.$storyblok.on("change", () => {
-      location.reload(true);
-    });
-  }
+  mixins: [StoryblokLivePreview]
 };
 </script>
 
