@@ -77,6 +77,16 @@ export default {
     align-items: center;
     justify-content: center;
     flex: 1;
+
+    @include for-phone-only {
+      &:nth-child(1) {
+        flex-basis: 66%;
+      }
+
+      &:nth-child(2) {
+        flex-basis: 33%;
+      }
+    }
   }
 
   &__content {
@@ -96,10 +106,15 @@ export default {
     }
 
     img {
-      width: 3rem;
-      height: 3rem;
+      width: 2.4rem;
+      height: 2.4rem;
       border-radius: 50%;
       margin-right: 1rem;
+
+      @include for-tablet-portrait-up {
+        width: 3rem;
+        height: 3rem;
+      }
     }
   }
 
