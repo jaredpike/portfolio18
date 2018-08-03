@@ -98,7 +98,7 @@ export default {
     }
 
     @include for-tablet-landscape-up {
-      width: 25rem;
+      width: 30rem;
       margin-left: 6%;
     }
 
@@ -124,6 +124,10 @@ export default {
 
     line-height: 1.4;
     margin-top: 1rem;
+
+    @include for-small-desktop-down {
+      font-size: 1.8rem;
+    }
   }
 
   &__image {
