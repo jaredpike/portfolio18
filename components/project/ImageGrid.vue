@@ -44,7 +44,9 @@ export default {
   },
   mounted() {
     this.targets = this.$el.querySelectorAll(".image-grid__item");
-    this.watch();
+    setTimeout(() => {
+      this.watch();
+    }, 200);
   },
   methods: {
     watch() {
@@ -101,7 +103,7 @@ export default {
   &__list {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     flex-flow: row wrap;
   }
 

@@ -39,7 +39,9 @@ export default {
   },
   mounted() {
     this.targets = this.$el.querySelectorAll(".mockup__item");
-    this.watch();
+    setTimeout(() => {
+      this.watch();
+    }, 200);
   },
   methods: {
     watch() {

@@ -154,7 +154,7 @@ export default {
     }
 
     @include for-tablet-landscape-up {
-      width: 60%;
+      width: 56%;
 
       &.left img {
         object-position: left;
