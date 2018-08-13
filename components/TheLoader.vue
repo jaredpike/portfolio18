@@ -28,7 +28,7 @@ export default {
         clearTimeout(this.delay);
         this.showingText = false;
         this.changeMessage();
-      }, 300);
+      }, 500);
     },
     changeMessage() {
       const messagesLength = this.messages.length - 1;
