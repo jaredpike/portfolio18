@@ -59,4 +59,11 @@ body {
     margin-top: 20rem;
   }
 }
+
+* {
+  &::selection,
+  &::-moz-selection {
+    background-color: -color(picton);
+  }
+}
 </style>

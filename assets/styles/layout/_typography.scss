@@ -46,6 +46,18 @@ $default-font-color: -color(abyss);
   }
 }
 
+@mixin hd-d($color: $default-font-color) {
+  @extend %base-heading;
+
+  font-size: 2.8rem;
+  line-height: 1.15;
+  color: $color;
+
+  @include for-tablet-portrait-up {
+    font-size: 3.2rem;
+  }
+}
+
 @mixin p-a($color: $default-font-color) {
   font-family: $primary-font;
   font-size: 2.1rem;
@@ -73,4 +85,20 @@ $default-font-color: -color(abyss);
   font-weight: -weight(black);
   text-transform: uppercase;
   margin-bottom: 0.6rem;
+}
+
+@mixin small($color: $default-font-color) {
+  font-family: $primary-font;
+  color: $color;
+  line-height: 1.2;
+  font-size: 1.4rem;
+}
+
+@mixin link {
+  transition: color 0.1s ease, border-color 0.1s ease;
+
+  &:hover {
+    color: -color(picton);
+    border-color: -color(picton);
+  }
 }

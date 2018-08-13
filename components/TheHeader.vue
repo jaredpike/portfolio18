@@ -61,11 +61,17 @@ export default {
           transform: scaleX(1) translateY(-50%);
           transform-origin: left;
         }
+
+        &:hover {
+          color: -color(abyss) !important;
+        }
       }
     }
   }
 
   &__link {
+    @include link;
+
     font-size: 1.8rem;
     font-weight: -weight(black);
     color: -color(abyss);

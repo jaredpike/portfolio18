@@ -23,8 +23,11 @@ export default {
 
 <style lang="scss" scoped>
 .button {
-  @include p-a(-color(abyss));
+  @include link;
 
+  font-family: $primary-font;
+  font-size: 1.8rem;
+  color: $default-font-color;
   text-transform: uppercase;
   font-weight: -weight(black);
   padding-bottom: 0.4rem;

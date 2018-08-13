@@ -1,5 +1,5 @@
 <template lang="md">
-  <div class="markdown-content" v-html="$md.render(content)"></div>
+  <div :class="['markdown-content', classes]" v-html="$md.render(content)"></div>
 </template>
 
 <script>
@@ -8,6 +8,9 @@ export default {
     content: {
       type: String,
       required: true
+    },
+    classes: {
+      type: String
     }
   }
 };
@@ -27,11 +30,19 @@ export default {
     @include hd-c(-color(abyss));
   }
 
+  &.small {
+    p {
+      @include small;
+    }
+  }
+
   p {
     @include p-a(-color(abyss));
   }
 
   a {
+    @include link;
+
     color: -color(abyss);
     border-bottom: 1px solid -color(abyss);
   }
