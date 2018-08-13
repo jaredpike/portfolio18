@@ -90,7 +90,7 @@ $default-font-color: -color(abyss);
 @mixin small($color: $default-font-color) {
   font-family: $primary-font;
   color: $color;
-  line-height: 1.2;
+  line-height: 1.5;
   font-size: 1.4rem;
 }
 
