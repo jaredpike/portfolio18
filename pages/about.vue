@@ -120,7 +120,7 @@ export default {
           intro: content.intro,
           image: content.image,
           linkedin: content.linkedin,
-          twitter: content.twitter,
+          dribbble: content.dribbble,
           github: content.github,
           medium: content.medium,
           footnote: content.footnote,

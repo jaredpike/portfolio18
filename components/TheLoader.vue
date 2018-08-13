@@ -23,12 +23,10 @@ export default {
       }, 1500);
     },
     finish() {
-      setTimeout(() => {
-        this.loading = false;
-        clearTimeout(this.delay);
-        this.showingText = false;
-        this.changeMessage();
-      }, 500);
+      this.loading = false;
+      clearTimeout(this.delay);
+      this.showingText = false;
+      this.changeMessage();
     },
     changeMessage() {
       const messagesLength = this.messages.length - 1;
