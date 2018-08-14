@@ -35,8 +35,11 @@ export default {
     }
   },
   mounted() {
-    this.onWindowResize();
     this.loop();
+
+    this.$nextTick(() => {
+      this.calculateDimensions();
+    });
 
     window.onscroll = () => {
       this.onScroll();
