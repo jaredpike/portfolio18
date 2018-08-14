@@ -4,6 +4,6 @@
 
 <style lang="scss" scoped>
 .footer {
-  height: 16rem;
+  height: 8rem;
 }
 </style>
