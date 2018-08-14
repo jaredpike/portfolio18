@@ -33,3 +33,11 @@
 @mixin for-big-desktop-up {
   @media (min-width: 1700px) { @content; }
 }
+
+@mixin for-hover {
+  @media (min-width: 600px) { 
+    &:hover {
+      @content; 
+    }
+  }
+}

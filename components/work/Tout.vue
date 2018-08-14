@@ -62,6 +62,12 @@ export default {
   background: -color(abyss);
   display: block;
 
+  @include for-hover {
+    .tout__image img {
+      transform: scale(1.05);
+    }
+  }
+
   &__ratio {
     position: relative;
     padding-top: 100%;
@@ -141,6 +147,7 @@ export default {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.3s $ease-bounce;
 
       @include for-tablet-portrait-down {
         opacity: 0.1;

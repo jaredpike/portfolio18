@@ -36,6 +36,7 @@
           :hideButton="true"
         />
     </div>
+    <ProgressBar/>
   </section>
 </template>
 
@@ -50,6 +51,7 @@ import Mockup from "@/components/project/Mockup";
 import ImageGrid from "@/components/project/ImageGrid";
 import Tout from "@/components/work/Tout";
 import ArticleTout from "@/components/project/ArticleTout";
+import ProgressBar from "@/components/project/ProgressBar";
 
 export default {
   async asyncData(context) {
@@ -103,7 +105,8 @@ export default {
     Tout,
     Mockup,
     ImageGrid,
-    ArticleTout
+    ArticleTout,
+    ProgressBar
   },
   mixins: [StoryblokLivePreview]
 };
