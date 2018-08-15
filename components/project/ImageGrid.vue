@@ -3,7 +3,7 @@
     <div :class="['image-grid', removePadding ? 'no-padding' : '']" :style="{ backgroundColor: color }">
       <div class="image-grid__inner">
         <ul class="image-grid__list">
-          <li class="image-grid__item" v-for="image in images" :key="image.filename" style="opacity: 0">
+          <li class="image-grid__item" v-for="image in images" :key="image.filename">
             <img :class="['image-grid__image', hideShadows ? '' : 'has-shadow']" :src="image.filename" />
           </li>
         </ul>
@@ -40,34 +40,6 @@ export default {
     },
     caption: {
       type: String
-    }
-  },
-  mounted() {
-    this.targets = this.$el.querySelectorAll(".image-grid__item");
-    setTimeout(() => {
-      this.watch();
-    }, 200);
-  },
-  methods: {
-    watch() {
-      const watchTargets = this.$el.querySelectorAll(".image-grid__item");
-      const watcher = scrollMonitor.create(watchTargets);
-      watcher.enterViewport(() => {
-        watcher.destroy();
-        this.animateIn();
-      });
-    },
-    animateIn() {
-      anime({
-        targets: this.targets,
-        duration: 2000,
-        translateY: [100, 0],
-        delay: function(el, i) {
-          return i * 200;
-        },
-        elasticity: 350,
-        opacity: 1
-      });
     }
   },
   components: {
@@ -109,7 +81,6 @@ export default {
 
   &__item {
     width: 100%;
-    opacity: 0;
 
     & + * {
       margin-top: 2rem;

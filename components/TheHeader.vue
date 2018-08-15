@@ -25,7 +25,7 @@ export default {
 <style lang="scss" scoped>
 .page-header {
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   padding: 3rem 3.2rem;

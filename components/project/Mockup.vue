@@ -3,7 +3,7 @@
     <div class="mockup" :style="{ backgroundColor: color }">
       <div class="mockup__inner">
         <ul class="mockup__list">
-          <li class="mockup__item" v-for="image in images" :key="image.filename" style="opacity: 0">
+          <li class="mockup__item" v-for="image in images" :key="image.filename">
             <img class="mockup__image" :src="image.filename" />
           </li>
         </ul>
@@ -35,37 +35,6 @@ export default {
     },
     caption: {
       type: String
-    }
-  },
-  mounted() {
-    this.targets = this.$el.querySelectorAll(".mockup__item");
-    setTimeout(() => {
-      this.watch();
-    }, 200);
-  },
-  methods: {
-    watch() {
-      const watchTargets = this.$el.querySelectorAll(".mockup__trigger");
-      const watcher = scrollMonitor.create(watchTargets);
-      watcher.enterViewport(() => {
-        watcher.destroy();
-        this.animateIn();
-      });
-    },
-    animateIn() {
-      anime({
-        targets: this.targets,
-        duration: 2000,
-        translateY: ["100vh", 0],
-        delay: function(el, i) {
-          return i * 200;
-        },
-        elasticity: 350,
-        opacity: 1,
-        rotateX: ["-25deg", "25deg"],
-        rotateY: ["-90deg", "10deg"],
-        rotateZ: ["-60deg", "-20deg"]
-      });
     }
   },
   components: {
@@ -104,6 +73,7 @@ export default {
     box-shadow: -10px 20px 35px 0px rgba(0, 0, 0, 0.2),
       -20px 30px 55px 20px rgba(0, 0, 0, 0.15),
       -2px 2px 10px 0px rgba(0, 0, 0, 0.1);
+    transform: rotateX(25deg) rotateY(10deg) rotateZ(-20deg);
   }
 
   &__trigger {
