@@ -36,14 +36,14 @@ export default {
   },
   mounted() {
     this.loop();
+    this.calculateDimensions();
 
-    this.$nextTick(() => {
+    // forgive me for this one
+    setTimeout(() => {
       this.calculateDimensions();
-    });
+    }, 1000);
 
-    window.onscroll = () => {
-      this.onScroll();
-    };
+    window.addEventListener("scroll", this.onScroll);
 
     window.onresize = () => {
       this.onWindowResize();
