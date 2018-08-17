@@ -61,7 +61,16 @@ module.exports = {
         resources: "@/assets/styles/main.scss"
       }
     ],
-    ["@nuxtjs/markdownit", { linkify: true }]
+    ["@nuxtjs/markdownit", { linkify: true }],
+    [
+      "@nuxtjs/google-analytics",
+      {
+        id: "UA-110156199-2",
+        autoTracking: {
+          pageviewOnLoad: false
+        }
+      }
+    ]
   ],
   markdownit: {
     injected: true
