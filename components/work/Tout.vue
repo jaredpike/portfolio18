@@ -104,7 +104,7 @@ export default {
     }
 
     @include for-tablet-landscape-up {
-      width: 30rem;
+      width: 28rem;
       margin-left: 6%;
     }
 
@@ -127,7 +127,7 @@ export default {
 
   &__dek {
     font-family: $primary-font;
-    font-size: 2.1rem;
+    font-size: 1.8rem;
     color: -color(white);
     line-height: 1.4;
     margin-top: 1rem;

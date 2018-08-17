@@ -1,7 +1,7 @@
 <template>
   <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
     <g class="stem">
-    <path d="M0 16V0H4V16H0Z" transform="translate(112) scale(16)"/>
+      <path d="M0 16V0H4V16H0Z" transform="translate(112) scale(16)"/>
     </g>
     <g class="p">
       <path d="M0 0C0 3.31329 2.68671 6 6 6V0H0Z" transform="translate(0 160) scale(16)"/>
@@ -18,6 +18,7 @@ svg {
   width: 3.6rem;
   height: 3.6rem;
   fill: -color(picton);
+  transition: transform 0.3s ease;
 
   @include for-tablet-portrait-up {
     width: 4.8rem;
@@ -25,10 +26,12 @@ svg {
   }
 
   g {
-    transition: transform 0.2s $ease-in-out-quart;
+    transition: transform 0.3s ease;
   }
 
-  &:hover {
+  @include for-hover {
+    transform: scale(1.1);
+
     .j {
       transform: translateY(-3rem);
     }
