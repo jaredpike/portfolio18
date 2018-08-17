@@ -126,8 +126,9 @@ export default {
   }
 
   &__dek {
-    @include p-a(-color(white));
-
+    font-family: $primary-font;
+    font-size: 2.1rem;
+    color: -color(white);
     line-height: 1.4;
     margin-top: 1rem;
 

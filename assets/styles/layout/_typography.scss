@@ -1,4 +1,5 @@
 $primary-font: "Modern Era", "Helvetica Neue", "Helvetica", sans-serif;
+$secondary-font: "Crimson Text";
 $default-font-color: -color(abyss);
 
 %base-heading {
@@ -9,7 +10,7 @@ $default-font-color: -color(abyss);
 @mixin hd-a($color: $default-font-color) {
   @extend %base-heading;
 
-  font-size: 3.6rem;
+  font-size: 4.6rem;
   line-height: 1.2;
   color: $color;
 
@@ -59,16 +60,9 @@ $default-font-color: -color(abyss);
 }
 
 @mixin p-a($color: $default-font-color) {
-  font-family: $primary-font;
-  font-size: 2.1rem;
-  line-height: 1.6;
-  color: $color;
-}
-
-@mixin p-b($color: $default-font-color) {
-  font-family: $primary-font;
+  font-family: $secondary-font;
   font-size: 2rem;
-  line-height: 1.55;
+  line-height: 1.5;
   color: $color;
 
   @include for-tablet-portrait-up {
@@ -76,9 +70,20 @@ $default-font-color: -color(abyss);
   }
 }
 
+@mixin p-b($color: $default-font-color) {
+  font-family: $secondary-font;
+  font-size: 2.6rem;
+  line-height: 1.5;
+  color: $color;
+
+  @include for-tablet-portrait-up {
+    font-size: 3.2rem;
+  }
+}
+
 @mixin eyebrow($color: $default-font-color) {
   font-family: $primary-font;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.2;
   letter-spacing: 0.05em;
   color: $color;

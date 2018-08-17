@@ -23,8 +23,8 @@ export default {
 
 <style lang="scss" scoped>
 .pullquote {
-  @include hd-b(-color(abyss));
-
+  font-family: $secondary-font;
+  font-size: 5.4rem;
   line-height: 1.3;
 
   @include for-small-desktop-up {

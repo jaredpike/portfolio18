@@ -66,9 +66,10 @@ export default {
   z-index: -z(loader);
 
   &__text {
-    @include p-a(-color(white));
-
+    font-family: $primary-font;
+    font-size: 2rem;
     font-weight: -weight(black);
+    color: -color(white);
     text-transform: uppercase;
     animation: flash 0.4s linear infinite;
   }
