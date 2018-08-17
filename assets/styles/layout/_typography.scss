@@ -7,6 +7,22 @@ $default-font-color: -color(abyss);
   font-weight: -weight(bold);
 }
 
+@mixin hd-hero($color: $default-font-color) {
+  @extend %base-heading;
+
+  font-size: 3.6rem;
+  line-height: 1.2;
+  color: $color;
+
+  @include for-tablet-portrait-up {
+    font-size: 5.4rem;
+  }
+
+  @include for-tablet-landscape-up {
+    font-size: 6.4rem;
+  }
+}
+
 @mixin hd-a($color: $default-font-color) {
   @extend %base-heading;
 
@@ -89,7 +105,10 @@ $default-font-color: -color(abyss);
   color: $color;
   font-weight: -weight(black);
   text-transform: uppercase;
-  margin-bottom: 0.6rem;
+
+  @include for-tablet-portrait-up {
+    margin-bottom: 0.2rem;
+  }
 }
 
 @mixin small($color: $default-font-color) {

@@ -35,11 +35,18 @@ export default {
 
 <style lang="scss" scoped>
 .baseball-card {
-  width: 25rem;
+  @include for-tablet-portrait-up {
+    width: 35rem;
+  }
 
   @include for-tablet-landscape-up {
     display: flex;
     justify-content: flex-end;
+    width: 30rem;
+  }
+
+  @include for-desktop-up {
+    width: 35rem;
   }
 
   &__value {

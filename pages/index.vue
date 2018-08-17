@@ -83,9 +83,9 @@ export default {
   }
 
   &__title {
-    @include hd-a();
+    @include hd-hero();
 
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
     max-width: 120rem;
 
     @include for-tablet-portrait-up {
