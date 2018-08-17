@@ -1,6 +1,6 @@
 <template>
   <div v-editable="blok">
-    <div :class="['image-grid', removePadding ? 'no-padding' : '']" :style="{ backgroundColor: color }">
+    <div :class="['image-grid', removePadding ? 'no-padding' : '', images.length === 2 ? 'has-two-images' : '']" :style="{ backgroundColor: color }">
       <div class="image-grid__inner">
         <ul class="image-grid__list">
           <li class="image-grid__item" v-for="image in images" :key="image.filename">
@@ -55,6 +55,14 @@ export default {
   position: relative;
   overflow: hidden;
   border-radius: $border-radius;
+
+  &.has-two-images {
+    .image-grid__item {
+      @include for-tablet-portrait-up {
+        width: 48%;
+      }
+    }
+  }
 
   &.no-padding {
     overflow: visible;
