@@ -37,7 +37,11 @@ export default {
   &__heading {
     @include hd-c(-color(abyss));
 
-    margin-bottom: 1.6rem;
+    margin-bottom: 0.4rem;
+
+    @include for-tablet-portrait-up {
+      margin-bottom: 1.6rem;
+    }
   }
 
   &__copy {

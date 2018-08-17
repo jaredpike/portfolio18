@@ -54,7 +54,6 @@ export default {
   margin-top: 4rem;
   position: relative;
   overflow: hidden;
-  border-radius: $border-radius;
 
   &.has-two-images {
     .image-grid__item {

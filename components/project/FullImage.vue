@@ -35,7 +35,6 @@ export default {
 <style lang="scss" scoped>
 .full-image {
   img {
-    border-radius: $border-radius;
     width: 100%;
     max-width: 100%;
   }

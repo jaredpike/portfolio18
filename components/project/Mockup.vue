@@ -1,4 +1,4 @@
-<template> 
+<template>
   <div v-editable="blok">
     <div class="mockup" :style="{ backgroundColor: color }">
       <div class="mockup__inner">
@@ -51,7 +51,6 @@ export default {
   height: 0;
   position: relative;
   overflow: hidden;
-  border-radius: $border-radius;
 
   &__inner {
     padding-left: 10vw;
