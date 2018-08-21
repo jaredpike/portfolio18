@@ -1,7 +1,19 @@
 <template>
   <transition name="loader">
     <div class="loader" v-if="loading">
-      <p class="loader__text" v-if="showingText">{{ messages[index] }}</p>
+      <div class="loader__logo" v-if="showingLogo">
+        <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+        <g class="stem">
+          <path d="M0 16V0H4V16H0Z" transform="translate(112) scale(16)"/>
+        </g>
+        <g class="j">
+          <path d="M0 0C0 3.31329 2.68671 6 6 6V0H0Z" transform="translate(0 160) scale(16)"/>
+        </g>
+        <g class="p">
+          <path d="M4 4.19048C4.0032 1.78971 2.2096 0 0 0V8C2.2096 8 4 6.21029 4 4.19048Z" transform="translate(192) scale(16)"/>
+        </g>
+      </svg>
+    </div>
     </div>
   </transition>
 </template>
@@ -10,45 +22,44 @@
 export default {
   data: () => ({
     loading: false,
-    messages: ["Aligning pixels...", "Arranging grids...", "Making it pop..."],
-    index: 0,
-    showingText: false
+    showingLogo: false
   }),
   methods: {
     start() {
       this.loading = true;
 
       this.delay = setTimeout(() => {
-        this.showingText = true;
-      }, 1500);
+        this.showingLogo = true;
+      }, 1000);
     },
     finish() {
       this.loading = false;
       clearTimeout(this.delay);
-      this.showingText = false;
-      this.changeMessage();
-    },
-    changeMessage() {
-      const messagesLength = this.messages.length - 1;
-
-      if (this.index === messagesLength) {
-        this.index = 0;
-      } else {
-        this.index++;
-      }
+      this.showingLogo = false;
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-@keyframes flash {
-  from {
+$distance: 8rem;
+$rotation: 30deg;
+$speed: 1.2s;
+$timing: $ease-in-out-cubic;
+
+@keyframes fly {
+  0% {
+    transform: translateY($distance) rotateX($rotation);
     opacity: 0;
   }
 
-  to {
+  50% {
     opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-$distance) rotateX(-$rotation);
   }
 }
 
@@ -65,16 +76,32 @@ export default {
   justify-content: center;
   z-index: -z(loader);
 
-  &__text {
-    font-family: $primary-font;
-    font-size: 2rem;
-    font-weight: -weight(black);
-    color: -color(white);
-    text-transform: uppercase;
-    animation: flash 0.4s linear infinite;
+  &__logo {
+    width: 4.8rem;
+    height: 4.8rem;
+    fill: #fff;
+    overflow: visible;
+
+    svg {
+      overflow: visible;
+      perspective: 800px;
+    }
+
+    .j,
+    .p,
+    .stem {
+      animation: fly $speed $timing infinite;
+    }
+
+    .j {
+      animation-delay: 0.07s;
+    }
+
+    .stem {
+      animation-delay: 0.05s;
+    }
   }
 }
-
 .loader-enter-active,
 .loader-leave-active {
   transition: all 0.5s $ease-in-out-quart;
