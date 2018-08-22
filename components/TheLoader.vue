@@ -1,19 +1,21 @@
 <template>
   <transition name="loader">
     <div class="loader" v-if="loading">
-      <div class="loader__logo" v-if="showingLogo">
-        <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-        <g class="stem">
-          <path d="M0 16V0H4V16H0Z" transform="translate(112) scale(16)"/>
-        </g>
-        <g class="j">
-          <path d="M0 0C0 3.31329 2.68671 6 6 6V0H0Z" transform="translate(0 160) scale(16)"/>
-        </g>
-        <g class="p">
-          <path d="M4 4.19048C4.0032 1.78971 2.2096 0 0 0V8C2.2096 8 4 6.21029 4 4.19048Z" transform="translate(192) scale(16)"/>
-        </g>
-      </svg>
-    </div>
+      <transition name="logo">
+        <div class="loader__logo">
+          <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+            <g class="stem">
+              <path d="M0 16V0H4V16H0Z" transform="translate(112) scale(16)"/>
+            </g>
+            <g class="j">
+              <path d="M0 0C0 3.31329 2.68671 6 6 6V0H0Z" transform="translate(0 160) scale(16)"/>
+            </g>
+            <g class="p">
+              <path d="M4 4.19048C4.0032 1.78971 2.2096 0 0 0V8C2.2096 8 4 6.21029 4 4.19048Z" transform="translate(192) scale(16)"/>
+            </g>
+          </svg>
+        </div>
+      </transition>
     </div>
   </transition>
 </template>
@@ -21,45 +23,37 @@
 <script>
 export default {
   data: () => ({
-    loading: false,
-    showingLogo: false
+    loading: false
   }),
   methods: {
     start() {
       this.loading = true;
-
-      this.delay = setTimeout(() => {
-        this.showingLogo = true;
-      }, 1000);
     },
     finish() {
       this.loading = false;
-      clearTimeout(this.delay);
-      this.showingLogo = false;
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-$distance: 8rem;
-$rotation: 30deg;
-$speed: 1.2s;
+$speed: 1s;
 $timing: $ease-in-out-cubic;
 
 @keyframes fly {
   0% {
-    transform: translateY($distance) rotateX($rotation);
+    transform: scale(0.7);
     opacity: 0;
   }
 
   50% {
     opacity: 1;
+    transform: scale(1);
   }
 
   100% {
     opacity: 0;
-    transform: translateY(-$distance) rotateX(-$rotation);
+    transform: scale(0.7);
   }
 }
 
@@ -91,14 +85,15 @@ $timing: $ease-in-out-cubic;
     .p,
     .stem {
       animation: fly $speed $timing infinite;
+      transform-origin: center;
     }
 
     .j {
-      animation-delay: 0.07s;
+      animation-delay: 0.2s;
     }
 
     .stem {
-      animation-delay: 0.05s;
+      animation-delay: 0.1s;
     }
   }
 }
