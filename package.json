@@ -16,6 +16,7 @@
     "@nuxtjs/axios": "^5.0.0",
     "@nuxtjs/google-analytics": "^2.0.2",
     "@nuxtjs/markdownit": "^1.2.1",
+    "@nuxtjs/sitemap": "^0.1.1",
     "animejs": "^2.2.0",
     "autoprefixer": "^8.6.4",
     "node-sass": "^4.9.0",

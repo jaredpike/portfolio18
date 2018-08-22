@@ -48,6 +48,7 @@ module.exports = {
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     "@nuxtjs/axios",
+    "@nuxtjs/sitemap",
     [
       "storyblok-nuxt",
       {
@@ -97,6 +98,28 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+  },
+
+  /*
+  ** Sitemap
+  */
+  sitemap: {
+    path: "/sitemap.xml",
+    hostname: "https://www.jaredpike.design",
+    cacheTime: 1000 * 60 * 15,
+    gzip: true,
+    generate: true, // Enable me when using nuxt generate
+    routes: function() {
+      return axios
+        .get(
+          "https://api.storyblok.com/v1/cdn/stories?version=published&token=kr2RQ5qwoCNn5nQ1L7oaDAtt&starts_with=work&cv=" +
+            Math.floor(Date.now() / 1e3)
+        )
+        .then(res => {
+          const caseStudies = res.data.stories.map(cs => cs.full_slug);
+          return ["/", "/about", ...caseStudies];
+        });
+    }
   },
 
   /*
