@@ -5,13 +5,14 @@
         <h1 class="hero__title">{{ project.title }}</h1>
         <div class="hero__intro">
           <div class="hero__section">
-            <BaseballCard :client="project.client" :role="project.role" :agency="project.agency" />
+            <p class="hero__dek">{{ project.intro }}</p>
           </div>
           <div class="hero__section">
-            <p class="hero__dek">{{ project.intro }}</p>
-            <Button v-if="project.url" :href="project.url" :newWindow="true">Launch Site</Button>
+            <BaseballCard :client="project.client" :role="project.role" :agency="project.agency" />
           </div>
         </div>
+                    <Button v-if="project.url" :href="project.url" :newWindow="true">Launch Site</Button>
+
       </div>
     </div>
     <ul class="blocks">
@@ -150,14 +151,13 @@ export default {
   }
 
   &__section {
-    &:first-child {
+    &:last-child {
       @include for-tablet-landscape-up {
-        order: 2;
         margin-left: 4rem;
       }
 
       @include for-tablet-portrait-down {
-        margin-bottom: 3rem;
+        margin-top: 4rem;
       }
     }
   }

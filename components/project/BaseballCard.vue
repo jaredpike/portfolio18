@@ -35,7 +35,7 @@ export default {
 
 <style lang="scss" scoped>
 .baseball-card {
-  @include for-tablet-portrait-up {
+  @include for-tablet-landscape-up {
     width: 35rem;
   }
 
@@ -53,9 +53,19 @@ export default {
     @include p-a(-color(abyss));
   }
 
+  &__list {
+    @include for-tablet-portrait-down {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+
   &__item {
-    & + * {
-      margin-top: 2rem;
+    @include for-tablet-landscape-up {
+      & + * {
+        margin-top: 2rem;
+      }
     }
   }
 
