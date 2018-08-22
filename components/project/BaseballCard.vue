@@ -57,7 +57,7 @@ export default {
     @include for-tablet-portrait-down {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+      grid-gap: 3.2rem;
     }
   }
 

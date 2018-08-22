@@ -53,7 +53,7 @@ body {
 }
 
 .main {
-  margin-top: 14rem;
+  margin-top: 12rem;
 
   @include for-tablet-portrait-up {
     margin-top: 20rem;
