@@ -98,9 +98,12 @@ export default {
 
   &__summary {
     z-index: -z(content);
+    flex-grow: 0;
 
     @include for-tablet-portrait-down {
-      padding: 6rem 4rem;
+      padding: 4rem;
+      background-color: white;
+      order: 2;
     }
 
     @include for-tablet-landscape-up {
@@ -137,12 +140,19 @@ export default {
     }
   }
 
+  &__type,
+  &__title,
+  &__dek {
+    @include for-tablet-portrait-down {
+      color: -color(abyss);
+    }
+  }
+
   &__image {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
+    position: relative;
+    flex: 1;
+    width: 90%;
+    margin-left: auto;
 
     img {
       width: 100%;
@@ -151,18 +161,17 @@ export default {
       transition: transform 0.3s $ease-bounce;
 
       @include for-tablet-portrait-down {
-        opacity: 0.1;
+        position: absolute;
+        object-position: left;
       }
-    }
-
-    @include for-tablet-portrait-down {
-      position: absolute;
-      bottom: 0;
-      left: 0;
     }
 
     @include for-tablet-landscape-up {
       width: 56%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
 
       &.left img {
         object-position: left;
@@ -172,10 +181,20 @@ export default {
         object-position: right;
       }
     }
+
+    @include for-tablet-portrait-down {
+      &.center img {
+        object-position: center;
+      }
+    }
   }
 
   &__action {
     @extend %action;
+
+    @include for-tablet-portrait-down {
+      display: none;
+    }
   }
 }
 </style>
