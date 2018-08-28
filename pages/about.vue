@@ -65,7 +65,7 @@
           <h2 class="about__heading">Experience</h2>
           <ul class="experience">
             <li class="experience__item">
-              <div class="experience__time">January 2016 - Present</div>
+              <div class="experience__time">Jan 2016 - Present</div>
               <p class="experience__title">Interactive Designer, Ronik</p>
             </li>
             <li class="experience__item">
@@ -82,17 +82,6 @@
             </li>
           </ul>
         </div>
-
-        <!-- <div class="about__section">
-          <h2 class="about__heading">Awards</h2>
-          <ul class="experience">
-            <li class="experience__item">
-              <div class="experience__time">Communications Arts</div>
-              <div class="experience__title">Award of Excellence, JFK T4</div>
-              <div class="experience__studio">Ronik Design</div>
-            </li>
-          </ul>
-        </div> -->
 
         <div class="about__section">
           <MarkdownContent :content="footnote" classes="small"/>
