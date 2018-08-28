@@ -1,6 +1,6 @@
-# portfolio18
+# Portfolio
 
-> My glorious Nuxt.js project
+> Portfolio website for Jared Pike using Nuxt and Storyblok.
 
 ## Build Setup
 
