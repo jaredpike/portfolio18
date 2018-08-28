@@ -35,9 +35,18 @@
 }
 
 @mixin for-hover {
-  @media (min-width: 600px) { 
-    &:hover {
-      @content; 
+  @media (min-width: 600px) {
+    &:hover,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+@mixin for-focus {
+  @media (min-width: 600px) {
+    &:focus {
+      @content;
     }
   }
 }
