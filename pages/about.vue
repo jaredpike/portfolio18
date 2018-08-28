@@ -204,7 +204,7 @@ export default {
       margin-left: 1.6rem;
     }
 
-    &:hover {
+    @include for-hover {
       svg {
         fill: -color(picton);
       }
