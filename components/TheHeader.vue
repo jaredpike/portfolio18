@@ -22,7 +22,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .page-header {
   width: 100%;
   position: absolute;
@@ -100,6 +100,22 @@ export default {
       transition: transform 0.6s $ease-in-out-quart 0.3s;
       transform: scaleX(0) translateY(-50%);
       transform-origin: right;
+    }
+  }
+
+  &__logo {
+    @include for-hover {
+      svg {
+        transform: scale(1.1);
+
+        .j {
+          transform: translateY(-3rem);
+        }
+
+        .p {
+          transform: translateY(3rem);
+        }
+      }
     }
   }
 }
