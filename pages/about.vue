@@ -71,19 +71,19 @@
           <h2 class="about__heading">Experience</h2>
           <ul class="experience">
             <li class="experience__item">
-              <div class="experience__time">Jan 2016 - Present</div>
+              <div class="experience__time">Jan 2016–Present</div>
               <p class="experience__title">Interactive Designer, Ronik</p>
             </li>
             <li class="experience__item">
-              <div class="experience__time">Sept 2015 - Dec 2015</div>
+              <div class="experience__time">Sept 2015–Dec 2015</div>
               <p class="experience__title">Designer, Scout</p>
             </li>
             <li class="experience__item">
-              <div class="experience__time">July 2014 - Dec 2014</div>
+              <div class="experience__time">July 2014–Dec 2014</div>
               <p class="experience__title">Design Co-op, Ronik</p>
             </li>
             <li class="experience__item">
-              <div class="experience__time">July 2013 - May 2014</div>
+              <div class="experience__time">July 2013–May 2014</div>
               <p class="experience__title">Design Co-op, Boundless Learning</p>
             </li>
           </ul>
