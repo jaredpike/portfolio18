@@ -16,6 +16,11 @@ module.exports = {
         hid: "description",
         name: "description",
         content: "Jared Pike is a Brooklyn-based designer and developer."
+      },
+      {
+        hid: "og:image",
+        property: "og:image",
+        content: "http://a.storyblok.com/f/46015/512x512/8d501e4e5e/logo-512.png"
       }
     ],
     link: [
