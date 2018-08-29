@@ -20,7 +20,7 @@ module.exports = {
       {
         hid: "og:image",
         property: "og:image",
-        content: "http://a.storyblok.com/f/46015/512x512/8d501e4e5e/logo-512.png"
+        content: "http://a.storyblok.com/f/46015/1200x630/7fd681943e/og-image.png"
       }
     ],
     link: [
