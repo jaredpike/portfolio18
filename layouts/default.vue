@@ -60,6 +60,12 @@ body {
   }
 }
 
+a {
+  &:focus {
+    color: -color(picton);
+  }
+}
+
 * {
   &::selection,
   &::-moz-selection {

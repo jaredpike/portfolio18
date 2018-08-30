@@ -1,5 +1,5 @@
 <template>
-  <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <svg class="logo" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
     <g class="stem">
       <path d="M0 16V0H4V16H0Z" transform="translate(112) scale(16)"/>
     </g>
@@ -12,8 +12,8 @@
   </svg>
 </template>
 
-<style lang="scss" scoped>
-svg {
+<style lang="scss">
+.logo {
   overflow: visible;
   width: 3.6rem;
   height: 3.6rem;
@@ -27,18 +27,6 @@ svg {
 
   g {
     transition: transform 0.3s ease;
-  }
-
-  @include for-hover {
-    transform: scale(1.1);
-
-    .j {
-      transform: translateY(-3rem);
-    }
-
-    .p {
-      transform: translateY(3rem);
-    }
   }
 }
 </style>
