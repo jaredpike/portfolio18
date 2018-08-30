@@ -81,14 +81,6 @@ export default {
     font-family: $primary-font;
     line-height: 1;
 
-    .body--light & {
-      color: -color(abyss);
-
-      &:after {
-        background-color: -color(abyss);
-      }
-    }
-
     &:after {
       content: "";
       position: absolute;

@@ -14,8 +14,6 @@
 </template>
 
 <script>
-import anime from "animejs";
-import scrollMonitor from "scrollmonitor";
 import storyblokLivePreview from "@/mixins/storyblokLivePreview";
 import Caption from "@/components/project/Caption";
 
