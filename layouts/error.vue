@@ -2,7 +2,7 @@
   <div class="error">
     <div class="error__inner">
       <h1 class="error__heading" v-if="error.statusCode === 404">Page not found.</h1>
-      <h1 class="error__heading" v-else>A server error has occured.</h1>
+      <h1 class="error__heading" v-else>Oh no, something went wrong.</h1>
       <Button href="/" :isInternal="true">Return home</Button>
     </div>
   </div>
