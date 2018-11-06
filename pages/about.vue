@@ -71,7 +71,11 @@
           <h2 class="about__heading">Experience</h2>
           <ul class="experience">
             <li class="experience__item">
-              <div class="experience__time">Jan 2016–Present</div>
+              <div class="experience__time">Nov 2018–Present</div>
+              <p class="experience__title">Product Designer, Rocket Insights</p>
+            </li>
+            <li class="experience__item">
+              <div class="experience__time">Jan 2016–Oct 2018</div>
               <p class="experience__title">Interactive Designer, Ronik</p>
             </li>
             <li class="experience__item">
