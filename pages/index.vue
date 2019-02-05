@@ -87,6 +87,7 @@ export default {
 
     margin-bottom: 4rem;
     max-width: 120rem;
+    text-align: center;
 
     @include for-tablet-portrait-up {
       margin-bottom: 8rem;
