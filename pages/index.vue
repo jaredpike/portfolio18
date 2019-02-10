@@ -85,6 +85,7 @@ export default {
   &__title {
     @include hd-hero();
 
+    margin: 0 auto;
     margin-bottom: 4rem;
     max-width: 120rem;
     text-align: center;
