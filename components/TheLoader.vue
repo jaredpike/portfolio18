@@ -26,26 +26,14 @@
 <script>
 export default {
   data: () => ({
-    loading: false,
-    seconds: 0
+    loading: false
   }),
   methods: {
     start() {
       this.loading = true;
-      this.interval = setInterval(() => {
-        this.seconds++;
-      }, 1000);
     },
     finish() {
-      if (this.seconds >= 1) {
-        this.seconds = 0;
-        this.loading = false;
-      } else {
-        setTimeout(() => {
-          this.loading = false;
-        }, 1000);
-      }
-      clearInterval(this.interval);
+      this.loading = false;
     }
   }
 };
