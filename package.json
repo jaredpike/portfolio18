@@ -25,7 +25,7 @@
     "sass-loader": "^7.0.3",
     "scrollmonitor": "^1.2.4",
     "storyblok-nuxt": "^0.0.6",
-    "three": "^0.94.0"
+    "three": "^0.125.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
